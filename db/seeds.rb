@@ -44,6 +44,16 @@ past_pricings_asset1_21 = PastPricing.create!(date: "2021-03-02 18:00:00", unit_
 past_pricings_asset1_22 = PastPricing.create!(date: "2021-03-02 20:00:00", unit_price: 65.20, asset: asset1)
 past_pricings_asset1_23 = PastPricing.create!(date: "2021-03-02 22:00:00", unit_price: 66.20, asset: asset1)
 
+#institutions seed
+
+institution2 = Institution.create!(name: "Scalable Capital")
+institution3 = Institution.create!(name: "Sparkasse")
+institution4 = Institution.create!(name: "Bitpanda")
+institution5 = Institution.create!(name: "Deutsche Bank")
+institution6 = Institution.create!(name: "Coinbase")
+institution7 = Institution.create!(name: "N26")
+institution8 = Institution.create!(name: "Revolut")
+
 # second seed
 user2 = User.create!(first_name: "Bella", last_name: "Stad", email: "Bella@example.com", password: "123456")
 user3 = User.create!(first_name: "Tom", last_name: "Bell", email: "Tom@example.com", password: "123456")

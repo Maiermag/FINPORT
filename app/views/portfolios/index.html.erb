@@ -4,7 +4,7 @@
 
 <ul>
   <% @portfolios.each do |portfolio| %>
-    <li> <%= portfolio.institution.name %> <%= link_to "remove", "#" %></li>
+    <li> <%= portfolio.institution.name %> <%= link_to "show", portfolio_path(portfolio) %> <%= link_to "remove", "#" %></li>
   <% end %>
 </ul>
 
