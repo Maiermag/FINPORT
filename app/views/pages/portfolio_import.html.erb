@@ -1,0 +1,12 @@
+
+<h1> Your Import </h1>
+
+<%= @portfolio.institution.name %>
+
+<%= unless @etf_assets.empty? do %>
+  <h3> ETFs </h3>
+  <% @etf_assets.each do |asset| %>
+  <%= asset.asset_name %>
+  <% end %>
+<% end %>
+

@@ -1,0 +1,11 @@
+
+<h1> Manage Connections </h1>
+<%= link_to "< go back", "#" %>
+
+<ul>
+  <% @portfolios.each do |portfolio| %>
+    <li> <%= portfolio.institution.name %> <%= link_to "remove", "#" %></li>
+  <% end %>
+</ul>
+
+<%= link_to "+ add new connection", "#" %>
