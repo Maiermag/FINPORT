@@ -35,11 +35,19 @@
 
 <h3> Industries: </h3>
 
+    <% current_industry_value = 0 %>
+    <% @assets.each do |asset| %>
+      <% asset.acquisitions.each do |acquisition| %>
+        <% asset.industry %>
+      <% end %>
+    <% end %>
+
   <ul>
     <% @assets.each do |asset| %>
         <li> <%= asset.industry.capitalize %> </li>
       <% end %>
   </ul>
+
 
 
 <h3> Asset categories: </h3>

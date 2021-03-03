@@ -37,7 +37,7 @@ institution19 = Institution.create!(name: "sbroker")
 institution20 = Institution.create!(name: "Oskar")
 
 # first seed with Trade Republic
-user1 = User.create!(first_name: "Jonas", last_name: "Mikael", email: "Jonas@example.com", password: "123456")
+user1 = User.create!(first_name: "Jonas", last_name: "Mikael", email: "jonas@example.com", password: "123456")
 institution1 = Institution.create!(name: "TradeRepublic")
 portfolio1 = Portfolio.create!(user: user1, institution: institution1)
 asset1 = Asset.create!(portfolio: portfolio1, asset_name: "Hello Fresh", current_unit_price: 63.85, asset_category: "stocks", industry: "food")
