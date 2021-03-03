@@ -3,9 +3,9 @@
 
 <ul>
   <% @portfolios.each do |portfolio| %>
-    <li> <%= portfolio.institution.name %> <%= link_to "show", portfolio_path(portfolio) %> <%= link_to "remove", "#" %></li>
+    <li> <%= portfolio.institution.name %> <%= link_to "show", portfolio_path(portfolio) %> <%= link_to "remove", portfolio_path(portfolio), method: :delete, data: {confirm: "Are you sure?"} %></li>
   <% end %>
 </ul>
 
-<%= link_to "+ add new connection", "#" %>
+<%= link_to "+ add new connection", new_portfolio_path %>
 <%= link_to "< go back", "#" %>

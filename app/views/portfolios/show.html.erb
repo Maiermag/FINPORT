@@ -53,4 +53,5 @@
   </ul>
 
 
-<%= link_to "< go back", portfolios_path %>
+<%= link_to " < go back", portfolios_path %>
+<%= link_to "x remove portfolio", portfolio_path(@portfolio), method: :delete, data: {confirm: "Are you sure?"} %>

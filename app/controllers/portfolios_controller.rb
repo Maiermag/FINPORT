@@ -7,6 +7,20 @@ class PortfoliosController < ApplicationController
   def show
     @portfolio = Portfolio.find(params[:id])
     @assets = @portfolio.assets
-    # = an array of assets
   end
+
+  def new
+    @portfolio = Portfolio.new
+  end
+
+  def create
+
+  end
+
+  def destroy
+    @portfolio = Portfolio.find(params[:id])
+    @portfolio.destroy
+    redirect_to portfolios_path, notice: 'portfolio removed from account'
+  end
+
 end
