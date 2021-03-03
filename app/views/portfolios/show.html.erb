@@ -9,13 +9,22 @@
 
 <h3> Your investments: <%= invest.round(2) %> € </h3>
 
-  <% performance = (current_value / invest) %>
+   <% current_value = 0 %>
+    <% @assets.each do |asset| %>
+      <% asset.acquisitions.each do |acquisition| %>
+        <% current_value += (asset.current_unit_price * acquisition.units_bought)%>
+      <% end %>
+    <% end %>
 
-<h3> Your performance: <%= performance.round(2) %> </h3>
+<h3> Current value: <%= current_value.round(2) %> € </h3>
+
+  <% performance = (current_value / invest) * 100 %>
+
+<h3> Your performance: <%= performance.round(2) %> % </h3>
 
 <h3> Industries: </h3>
 
 <h3> Assets: </h3>
 
 
-<%= link_to "< go back", "#" %>
+<%= link_to "< go back", portfolios_path %>

@@ -58,7 +58,7 @@ past_pricings_asset1_23 = PastPricing.create!(date: "2021-03-02 22:00:00", unit_
 # second seed within Trade Republic
 
 asset2 = Asset.create!(portfolio: portfolio1, asset_name: "Plug Power", current_unit_price: 63.85, asset_category: "share", industry: "energy")
-acquisition_asset2 = Acquisition.create(asset: asset1, date_bought: "2021-02-15 13:24:20" , units_bought: 50, unit_price_bought: 30.23)
+acquisition_asset2 = Acquisition.create(asset: asset2, date_bought: "2021-02-15 13:24:20" , units_bought: 50, unit_price_bought: 30.23)
 past_pricings_asset2_1 = PastPricing.create!(date: "2021-02-15 13:24:20", unit_price: 33.20, asset: asset2)
 past_pricings_asset2_2 = PastPricing.create!(date: "2021-02-16 13:24:20", unit_price: 34.20, asset: asset2)
 past_pricings_asset2_3 = PastPricing.create!(date: "2021-02-17 13:24:20", unit_price: 35.20, asset: asset2)
@@ -87,7 +87,7 @@ past_pricings_asset2_23 = PastPricing.create!(date: "2021-03-02 22:00:00", unit_
 
 portfolio2 = Portfolio.create!(user: user1, institution: institution5)
 asset3 = Asset.create!(portfolio: portfolio2, asset_name: "Tesla", current_unit_price: 63.85, asset_category: "share", industry: "automotive")
-acquisition_asset3 = Acquisition.create(asset: asset1, date_bought: "2021-02-15 13:24:20" , units_bought: 50, unit_price_bought: 30.23)
+acquisition_asset3 = Acquisition.create(asset: asset3, date_bought: "2021-02-15 13:24:20" , units_bought: 50, unit_price_bought: 30.23)
 past_pricings_asset3_1 = PastPricing.create!(date: "2021-02-15 13:24:20", unit_price: 33.20, asset: asset3)
 past_pricings_asset3_2 = PastPricing.create!(date: "2021-02-16 13:24:20", unit_price: 34.20, asset: asset3)
 past_pricings_asset3_3 = PastPricing.create!(date: "2021-02-17 13:24:20", unit_price: 35.20, asset: asset3)
@@ -116,7 +116,7 @@ past_pricings_asset3_23 = PastPricing.create!(date: "2021-03-02 22:00:00", unit_
 
 portfolio3 = Portfolio.create!(user: user1, institution: institution6)
 asset4 = Asset.create!(portfolio: portfolio3, asset_name: "Bitcoin", current_unit_price: 40000, asset_category: "cryptocurrency", industry: "crypto")
-acquisition_asset3 = Acquisition.create(asset: asset1, date_bought: "2021-02-15 13:24:20" , units_bought: 0.02, unit_price_bought: 38000)
+acquisition_asset4 = Acquisition.create(asset: asset4, date_bought: "2021-02-15 13:24:20" , units_bought: 0.2, unit_price_bought: 38000)
 past_pricings_asset4_1 = PastPricing.create!(date: "2021-02-15 13:24:20", unit_price: 40000, asset: asset4)
 past_pricings_asset4_2 = PastPricing.create!(date: "2021-02-16 13:24:20", unit_price: 40000, asset: asset4)
 past_pricings_asset4_3 = PastPricing.create!(date: "2021-02-17 13:24:20", unit_price: 40000, asset: asset4)
