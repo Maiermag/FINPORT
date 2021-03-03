@@ -10,4 +10,10 @@ class PagesController < ApplicationController
     @share_assets = @portfolio.assets.where(asset_category: "share")
     @crypto_assets = @portfolio.assets.where(asset_category: "cryptocurrency")
   end
+
+  def dashboard
+    @portfolio = Portfolio.all
+    @assets = Asset.all
+    @acquisitions = Acquisition.all
+  end
 end

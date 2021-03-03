@@ -1,6 +1,9 @@
 <%= render 'shared/side_menu' %>
 <div id="main">
-  <h1> <%= @portfolio.institution.name %> </h1>
+
+<%= link_to "[ < go back ]", portfolios_path %>
+
+<h1> <%= @portfolio.institution.name %> </h1>
 
     <% invest = 0 %>
     <% @assets.each do |asset| %>
@@ -17,6 +20,8 @@
           <% current_value += (asset.current_unit_price * acquisition.units_bought)%>
         <% end %>
       <% end %>
+  <% performance1 = ((current_value / invest) * 100) -100 %>
+  <% performance2 = current_value - invest %>
 
   <h3> Current value: <%= current_value.round(2) %> € </h3>
 
@@ -58,3 +63,4 @@
   <%= link_to "< go back", portfolios_path %>
 
 </div>
+<%= link_to "[ x remove portfolio ]", portfolio_path(@portfolio), method: :delete, data: {confirm: "Are you sure?"} %>
