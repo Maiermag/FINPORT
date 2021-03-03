@@ -34,7 +34,7 @@ institution16 = Institution.create!(name: "etoro")
 institution17 = Institution.create!(name: "smartbroker")
 institution18 = Institution.create!(name: "onvista-bank")
 institution19 = Institution.create!(name: "sbroker")
-institution19 = Institution.create!(name: "Oskar")
+institution20 = Institution.create!(name: "Oskar")
 
 # first seed with Trade Republic
 user1 = User.create!(first_name: "Jonas", last_name: "Mikael", email: "Jonas@example.com", password: "123456")

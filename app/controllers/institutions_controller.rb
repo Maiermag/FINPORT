@@ -1,9 +1,9 @@
 class InstitutionsController < ApplicationController
   def index
     if params[:query].present?
-      @institutions = Institutions.where("name ILIKE ?", "%#{params[:query]}%")
+      @institutions = Institution.where("name ILIKE ?", "%#{params[:query]}%")
     else
-      @institutions = Instiutions.all
+      @institutions = Institution.all
     end
   end
 end

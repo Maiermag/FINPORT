@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   get "/portfolio_import", to: 'pages#portfolio_import', as: :portfolio_import
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :portfolios, only: [:index, :show, :destroy, :new]
+  resources :institutions, only: [:index]
 end
 

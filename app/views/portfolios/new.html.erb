@@ -1,14 +1,3 @@
-<h1> Manage Connections </h1>
-
-<p> Connect to a new financial institution </p>
 
 
-<%= form_tag institutions_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find your institution"
-  %>
-  <%= submit_tag "Search" %>
-<% end %>
 
