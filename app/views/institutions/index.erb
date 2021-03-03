@@ -1,0 +1,10 @@
+<%= link_to "[< go back]", portfolios_path %>
+
+<h1> Manage Connections </h1>
+
+<p> Connect to a new financial institution </p>
+
+<%= simple_form_for(@portfolio) do |f| %>
+  <%= f.association :institution, collection: @institutions %>
+  <%= f.submit "Add Connection" %>
+<% end %>
