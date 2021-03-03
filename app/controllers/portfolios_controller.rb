@@ -7,6 +7,6 @@ class PortfoliosController < ApplicationController
   def show
     @portfolio = Portfolio.find(params[:id])
     @assets = @portfolio.assets
-    # @acquisitions = @assets.acquisitions
+    # = an array of assets
   end
 end
