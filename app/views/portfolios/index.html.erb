@@ -1,11 +1,12 @@
+<%= link_to "[ < go back ]", "#" %>
 
 <h1> Manage Connections </h1>
 
 <ul>
   <% @portfolios.each do |portfolio| %>
-    <li> <%= portfolio.institution.name %> <%= link_to "show", portfolio_path(portfolio) %> <%= link_to "remove", portfolio_path(portfolio), method: :delete, data: {confirm: "Are you sure?"} %></li>
+    <li> <%= portfolio.institution.name %> <%= link_to "[ > show ]", portfolio_path(portfolio) %> <%= link_to "[ x remove ]", portfolio_path(portfolio), method: :delete, data: {confirm: "Are you sure?"} %></li>
   <% end %>
 </ul>
 
-<%= link_to "+ add new connection", new_portfolio_path %>
-<%= link_to "< go back", "#" %>
+<%= link_to "[ + add new connection ]", institutions_path %>
+

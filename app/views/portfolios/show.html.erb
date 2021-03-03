@@ -1,3 +1,5 @@
+<%= link_to "[ < go back ]", portfolios_path %>
+
 <h1> <%= @portfolio.institution.name %> </h1>
 
   <% invest = 0 %>
@@ -18,7 +20,7 @@
 
 <h3> Current value: <%= current_value.round(2) %> € </h3>
 
-  <% performance1 = (current_value / invest) * 100 %>
+  <% performance1 = ((current_value / invest) * 100) -100 %>
   <% performance2 = current_value - invest %>
 
 <h3> Performance: <%= performance1.round(2) %> % , <%= performance2.round(2) %> € </h3>
@@ -53,5 +55,4 @@
   </ul>
 
 
-<%= link_to " < go back", portfolios_path %>
-<%= link_to "x remove portfolio", portfolio_path(@portfolio), method: :delete, data: {confirm: "Are you sure?"} %>
+<%= link_to "[ x remove portfolio ]", portfolio_path(@portfolio), method: :delete, data: {confirm: "Are you sure?"} %>

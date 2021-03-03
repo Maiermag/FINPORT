@@ -12,5 +12,8 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @portfolio = Portfolio.all
+    @assets = Asset.all
+    @acquisitions = Acquisition.all
   end
 end
