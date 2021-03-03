@@ -29,7 +29,7 @@ institution9 = Institution.create!(name: "Flatex")
 user1 = User.create!(first_name: "Jonas", last_name: "Mikael", email: "Jonas@example.com", password: "123456")
 institution1 = Institution.create!(name: "TradeRepublic")
 portfolio1 = Portfolio.create!(user: user1, institution: institution1)
-asset1 = Asset.create!(portfolio: portfolio1, asset_name: "Hello Fresh", current_unit_price: 63.85, asset_category: "share", industry: "food")
+asset1 = Asset.create!(portfolio: portfolio1, asset_name: "Hello Fresh", current_unit_price: 63.85, asset_category: "stocks", industry: "food")
 acquisition_asset1 = Acquisition.create(asset: asset1, date_bought: "2021-02-15 13:24:20" , units_bought: 10, unit_price_bought: 65.23)
 past_pricings_asset1_1 = PastPricing.create!(date: "2021-02-15 13:24:20", unit_price: 63.20, asset: asset1)
 past_pricings_asset1_2 = PastPricing.create!(date: "2021-02-16 13:24:20", unit_price: 64.20, asset: asset1)
@@ -57,7 +57,7 @@ past_pricings_asset1_23 = PastPricing.create!(date: "2021-03-02 22:00:00", unit_
 
 # second seed within Trade Republic
 
-asset2 = Asset.create!(portfolio: portfolio1, asset_name: "Plug Power", current_unit_price: 63.85, asset_category: "share", industry: "energy")
+asset2 = Asset.create!(portfolio: portfolio1, asset_name: "Plug Power", current_unit_price: 63.85, asset_category: "stocks", industry: "energy")
 acquisition_asset2 = Acquisition.create(asset: asset2, date_bought: "2021-02-15 13:24:20" , units_bought: 50, unit_price_bought: 30.23)
 past_pricings_asset2_1 = PastPricing.create!(date: "2021-02-15 13:24:20", unit_price: 33.20, asset: asset2)
 past_pricings_asset2_2 = PastPricing.create!(date: "2021-02-16 13:24:20", unit_price: 34.20, asset: asset2)
@@ -86,7 +86,7 @@ past_pricings_asset2_23 = PastPricing.create!(date: "2021-03-02 22:00:00", unit_
 # 3rd seed with Deutsche Bank
 
 portfolio2 = Portfolio.create!(user: user1, institution: institution5)
-asset3 = Asset.create!(portfolio: portfolio2, asset_name: "Tesla", current_unit_price: 63.85, asset_category: "share", industry: "automotive")
+asset3 = Asset.create!(portfolio: portfolio2, asset_name: "Tesla", current_unit_price: 63.85, asset_category: "stocks", industry: "automotive")
 acquisition_asset3 = Acquisition.create(asset: asset3, date_bought: "2021-02-15 13:24:20" , units_bought: 50, unit_price_bought: 30.23)
 past_pricings_asset3_1 = PastPricing.create!(date: "2021-02-15 13:24:20", unit_price: 33.20, asset: asset3)
 past_pricings_asset3_2 = PastPricing.create!(date: "2021-02-16 13:24:20", unit_price: 34.20, asset: asset3)
@@ -115,7 +115,7 @@ past_pricings_asset3_23 = PastPricing.create!(date: "2021-03-02 22:00:00", unit_
 # 4th seed with Coinbase
 
 portfolio3 = Portfolio.create!(user: user1, institution: institution6)
-asset4 = Asset.create!(portfolio: portfolio3, asset_name: "Bitcoin", current_unit_price: 40000, asset_category: "cryptocurrency", industry: "crypto")
+asset4 = Asset.create!(portfolio: portfolio3, asset_name: "Bitcoin", current_unit_price: 40000, asset_category: "cryptocurrency", industry: "cryptocurrency")
 acquisition_asset4 = Acquisition.create(asset: asset4, date_bought: "2021-02-15 13:24:20" , units_bought: 0.2, unit_price_bought: 38000)
 past_pricings_asset4_1 = PastPricing.create!(date: "2021-02-15 13:24:20", unit_price: 40000, asset: asset4)
 past_pricings_asset4_2 = PastPricing.create!(date: "2021-02-16 13:24:20", unit_price: 40000, asset: asset4)

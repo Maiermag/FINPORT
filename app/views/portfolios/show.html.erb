@@ -18,9 +18,10 @@
 
 <h3> Current value: <%= current_value.round(2) %> € </h3>
 
-  <% performance = (current_value / invest) * 100 %>
+  <% performance1 = (current_value / invest) * 100 %>
+  <% performance2 = current_value - invest %>
 
-<h3> Your performance: <%= performance.round(2) %> % </h3>
+<h3> Performance: <%= performance1.round(2) %> % , <%= performance2.round(2) %> € </h3>
 
 <h3> Investments: </h3>
 
