@@ -27,8 +27,15 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-
+import {openNav, closeNav} from '../components/sideMenu';
 document.addEventListener('turbolinks:load', () => {
+innitSideMenu();
   // Call your functions here, e.g:
   // initSelect2();
 });
+const innitSideMenu = () => {
+  document.querySelector("#open_button").addEventListener("click", openNav);
+
+  document.querySelector("#close_button").addEventListener("click", closeNav);
+};
+  

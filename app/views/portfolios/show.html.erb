@@ -1,56 +1,60 @@
-<h1> <%= @portfolio.institution.name %> </h1>
+<%= render 'shared/side_menu' %>
+<div id="main">
+  <h1> <%= @portfolio.institution.name %> </h1>
 
-  <% invest = 0 %>
-  <% @assets.each do |asset| %>
-    <% asset.acquisitions.each do |acquisition| %>
-      <% invest += (acquisition.unit_price_bought * acquisition.units_bought)%>
-    <% end %>
-  <% end %>
-
-<h3> Your investments: <%= invest.round(2) %> € </h3>
-
-   <% current_value = 0 %>
+    <% invest = 0 %>
     <% @assets.each do |asset| %>
       <% asset.acquisitions.each do |acquisition| %>
-        <% current_value += (asset.current_unit_price * acquisition.units_bought)%>
+        <% invest += (acquisition.unit_price_bought * acquisition.units_bought)%>
       <% end %>
     <% end %>
 
-<h3> Current value: <%= current_value.round(2) %> € </h3>
+  <h3> Your investments: <%= invest.round(2) %> € </h3>
 
-  <% performance1 = (current_value / invest) * 100 %>
-  <% performance2 = current_value - invest %>
-
-<h3> Performance: <%= performance1.round(2) %> % , <%= performance2.round(2) %> € </h3>
-
-<h3> Investments: </h3>
-
-  <ul>
-    <% @assets.each do |asset| %>
-        <li> <%= asset.asset_name %> </li>
-      <% end %>
-  </ul>
-
-<h3> Industries: </h3>
-
-  <ul>
-    <% @assets.each do |asset| %>
-        <li> <%= asset.industry.capitalize %> </li>
-      <% end %>
-  </ul>
-
-
-<h3> Asset categories: </h3>
-
-  <ul>
-  <% categories = [] %>
-   <% @assets.each do |asset| %>
-      <% categories << asset.asset_category %>
-      <% end %>
-        <% categories.uniq.each do |category| %>
-          <li> <%=  category.capitalize %> </li>
+    <% current_value = 0 %>
+      <% @assets.each do |asset| %>
+        <% asset.acquisitions.each do |acquisition| %>
+          <% current_value += (asset.current_unit_price * acquisition.units_bought)%>
         <% end %>
-  </ul>
+      <% end %>
+
+  <h3> Current value: <%= current_value.round(2) %> € </h3>
+
+    <% performance1 = (current_value / invest) * 100 %>
+    <% performance2 = current_value - invest %>
+
+  <h3> Performance: <%= performance1.round(2) %> % , <%= performance2.round(2) %> € </h3>
+
+  <h3> Investments: </h3>
+
+    <ul>
+      <% @assets.each do |asset| %>
+          <li> <%= asset.asset_name %> </li>
+        <% end %>
+    </ul>
+
+  <h3> Industries: </h3>
+
+    <ul>
+      <% @assets.each do |asset| %>
+          <li> <%= asset.industry.capitalize %> </li>
+        <% end %>
+    </ul>
 
 
-<%= link_to "< go back", portfolios_path %>
+  <h3> Asset categories: </h3>
+
+    <ul>
+    <% categories = [] %>
+    <% @assets.each do |asset| %>
+        <% categories << asset.asset_category %>
+        <% end %>
+          <% categories.uniq.each do |category| %>
+            <li> <%=  category.capitalize %> </li>
+          <% end %>
+    </ul>
+
+
+  <%= link_to "< go back", portfolios_path %>
+
+</div>
