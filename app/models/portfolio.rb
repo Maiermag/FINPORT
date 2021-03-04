@@ -34,13 +34,14 @@ class Portfolio < ApplicationRecord
     end
   end
 
+  def asset_categories
+     assets.pluck(:asset_category).sort
+  end
+
+
   # def industry_names
   #   industries.pluck(:name).sort
   # end
-
-  def asset_categories
-    assets.pluck(:asset_category).sort
-  end
 
   def total_current_industry_value(industry)
     assets.where(industry: industry).sum do |asset|

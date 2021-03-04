@@ -21,7 +21,7 @@
 <h4> Industries: </h4>
 
   <ul>
-    <% @industries.each do |industry| %>
+    <% @industries.uniq.each do |industry| %>
         <li>
           <%= industry.name.capitalize %>
           | Total current value: <%= current_user.total_current_asset_value(industry) %> €

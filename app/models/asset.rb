@@ -19,9 +19,8 @@ class Asset < ApplicationRecord
     end
   end
 
-  # def total_current_specific_asset_value(asset)
-  #   assets.where(asset_name: asset).sum do |asset|
-  #     asset.total_current_value
-  #   end
+  # def asset_categories
+  #    assets.pluck(:asset_category).sort
   # end
+
 end
