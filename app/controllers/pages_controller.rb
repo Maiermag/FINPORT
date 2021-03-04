@@ -45,5 +45,8 @@ class PagesController < ApplicationController
 
     # value per asset
 
+    def test
+    end
+
   end
 end
