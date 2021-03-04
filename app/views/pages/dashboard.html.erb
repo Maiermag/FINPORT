@@ -2,14 +2,19 @@
 
 <h1> Your Dashboard </h1>
 
-<h4> Your Investments: <%= @initial_invest %> € </h4>
-<h4> Current value: <%= @current_value %> € </h4>
+<h4> Your total investments: <%= @initial_invest %> € </h4>
+<h4> Current portfolio value: <%= @current_value %> € </h4>
 <h4> Performance: <%= @performance_in_percent %> % , <%= @performance_in_eur %> € </h4>
-<h4> Investments: </h4>
+<h4> Your assets: </h4>
 
   <ul>
     <% current_user.asset_names.uniq.each do |name| %>
-      <li> <%= name %> <%= current_user.total_current_specific_asset_value(name) %> € </li>
+      <li>
+        <%= name %>
+        | Portfolio value: <%= current_user.total_current_specific_asset_value(name) %> €
+        | Portfolio share: <%= ((current_user.total_current_specific_asset_value(name) / @current_value) * 100).round(2) %> %
+        | Performance: <%= (((current_user.total_current_specific_asset_value(name) / current_user.total_invested_asset_value(name)) * 100)-100).round(2) %> %
+      </li>
     <% end %>
   </ul>
 
@@ -17,9 +22,10 @@
 
   <ul>
     <% @industries.each do |industry| %>
-        <li> <%= industry.name.capitalize %>
-          <%= current_user.total_current_asset_value(industry) %> €
-          <%= (((current_user.total_current_asset_value(industry) / @current_value) * 100)).round(2) %> %
+        <li>
+          <%= industry.name.capitalize %>
+          | Total current value: <%= current_user.total_current_asset_value(industry) %> €
+          | Portfolio share: <%= (((current_user.total_current_asset_value(industry) / @current_value) * 100)).round(2) %> %
         </li>
       <% end %>
   </ul>
@@ -27,11 +33,14 @@
 <h4> Asset categories: </h4>
 
   <ul>
-  <% categories = [] %>
-   <% @assets.each do |asset| %>
-      <% categories << asset.asset_category %>
-      <% end %>
-        <% categories.uniq.each do |category| %>
-          <li> <%=  category.capitalize %> </li>
-        <% end %>
+    <% current_user.asset_categories.uniq.each do |category| %>
+      <li>
+        <%= category.capitalize %>
+        | Portfolio value: <%= current_user.total_category_current_value(category) %> €
+        | Portfolio share: <%= ((current_user.total_category_current_value(category) / @current_value) * 100).round(2) %> %
+      </li>
+    <% end %>
   </ul>
+
+
+

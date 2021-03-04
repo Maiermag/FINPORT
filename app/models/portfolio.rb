@@ -22,4 +22,36 @@ class Portfolio < ApplicationRecord
     end
   end
 
+  def total_current_category_value(asset_category)
+    assets.where(asset_category: asset_category).sum do |asset|
+      asset.total_current_value
+    end
+  end
+
+  def total_initial_category_value(asset_category)
+    assets.where(asset_category: asset_category).sum do |asset|
+      asset.total_invested_value
+    end
+  end
+
+  # def industry_names
+  #   industries.pluck(:name).sort
+  # end
+
+  def asset_categories
+    assets.pluck(:asset_category).sort
+  end
+
+  def total_current_industry_value(industry)
+    assets.where(industry: industry).sum do |asset|
+      asset.total_current_value
+    end
+  end
+
+  def total_initial_industry_value(industry)
+    assets.where(industry: industry).sum do |asset|
+      asset.total_invested_value
+    end
+  end
+
 end
