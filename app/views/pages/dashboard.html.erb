@@ -8,27 +8,19 @@
 <h4> Investments: </h4>
 
   <ul>
-    <% names = [] %>
-    <% @assets.each do |asset| %>
-    <% names << asset.asset_name %>
-      <% end %>
-          <% names.uniq.each do |name| %>
-          <li> <%=  name %> </li>
-        <% end %>
+    <% current_user.asset_names.uniq.each do |name| %>
+      <li> <%= name %> <%= current_user.total_current_specific_asset_value(name) %> € </li>
+    <% end %>
   </ul>
 
 <h4> Industries: </h4>
 
-    <% current_industry_value = 0 %>
-    <% @assets.uniq.each do |asset| %>
-      <% asset.acquisitions.each do |acquisition| %>
-        <% asset.industry.name %>
-      <% end %>
-    <% end %>
-
   <ul>
     <% @industries.each do |industry| %>
-        <li> <%= industry.name.capitalize %> </li>
+        <li> <%= industry.name.capitalize %>
+          <%= current_user.total_current_asset_value(industry) %> €
+          <%= (((current_user.total_current_asset_value(industry) / @current_value) * 100)).round(2) %> %
+        </li>
       <% end %>
   </ul>
 

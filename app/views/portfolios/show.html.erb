@@ -6,12 +6,15 @@
 <h4> Current value: <%= @current_value %> € </h4>
 <h4> Performance: <%= @performance_percent %> % , <%= @performance_eur %> € </h4>
 <h4> Investments: </h4>
-
-  <ul>
-    <% @assets.each do |asset| %>
-        <li> <%= asset.asset_name %> </li>
+    <ul>
+      <% @assets.each do |asset| %>
+        <li> <%= asset.asset_name %>
+          | Total current value: <%= @portfolio.total_current_specific_asset_value(asset.asset_name) %> €
+          | Portfolio share: <%=(((@portfolio.total_current_specific_asset_value(asset.asset_name) / @current_value) * 100)).round(2) %> %
+          | Performance <%= (((@portfolio.total_current_specific_asset_value(asset.asset_name) / @portfolio.total_initial_specific_asset_value(asset.asset_name)) * 100)-100).round(2) %> %
+        </li>
       <% end %>
-  </ul>
+    </ul>
 
 <h4> Industries: </h4>
 
