@@ -12,48 +12,49 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @portfolio = Portfolio.all
+    @portfolios = Portfolio.all
     @assets = Asset.all
     @acquisitions = Acquisition.all
-    @industries = Industry.all.order(:name)
+    @industries = current_user.industries.order(:name)
 
-     # total initial invest
+    # total initial invest
 
-    @initial_invest = 0
-    @assets.each do |asset|
-      asset.acquisitions.each do |acquisition|
-        @initial_invest += (acquisition.unit_price_bought * acquisition.units_bought)
-      end
-    end
-     @initial_invest = @initial_invest.round(2)
+    @initial_invest = current_user.total_invested_amount.round(2)
 
     # current total value
 
-    @current_value = 0
-    @assets.each do |asset|
-      asset.acquisitions.each do |acquisition|
-        @current_value += (asset.current_unit_price * acquisition.units_bought)
-      end
-    end
+    @current_value = current_user.total_invest_current_value.round(2)
 
     # performance
 
     @performance_in_percent = (((@current_value / @initial_invest) * 100) -100).round(2)
     @performance_in_eur = (@current_value - @initial_invest).round(2)
 
-    # value per asset
-
     # value per industry
 
     @current_industry_value = 0
-    @assets.each do |asset|
-      asset.acquisitions.each do |acquisition|
-        asset.industry.name
-        end
-      end
 
-    def test
-    end
 
+
+    # all assets in the users existing industries
+    # units bought per asset
+    # current price per asset
+    # take the sum of all these assets
+
+    # @industry.assets do |asset|
+    #   asset.acquisitions.each do |acquisition|
+    #     @current_value += (asset.current_unit_price * acquisition.units_bought)
+    #   end
+    # end
+
+    # @assets.each do |asset|
+    #   asset.acquisitions.each do |acquisition|
+    #     asset.industry.name
+    #   end
+    # end
+
+  end
+
+  def test
   end
 end
