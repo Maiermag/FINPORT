@@ -44,6 +44,9 @@ class PagesController < ApplicationController
     performance_in_eur = current_value - invest
 
     # value per asset
+  end
+  def testcomponents
 
   end
 end
+
