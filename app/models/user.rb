@@ -29,4 +29,10 @@ class User < ApplicationRecord
     end
   end
 
+  def total_current_specific_asset_value(asset_name)
+    assets.where(asset_name: asset_name).sum do |asset|
+      asset.total_current_value
+    end
+  end
+
 end

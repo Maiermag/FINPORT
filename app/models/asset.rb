@@ -18,4 +18,10 @@ class Asset < ApplicationRecord
        acquisition.unit_price_bought * acquisition.units_bought
     end
   end
+
+  # def total_current_specific_asset_value(asset)
+  #   assets.where(asset_name: asset).sum do |asset|
+  #     asset.total_current_value
+  #   end
+  # end
 end

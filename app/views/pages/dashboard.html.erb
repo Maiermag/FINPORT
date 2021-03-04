@@ -9,7 +9,7 @@
 
   <ul>
     <% current_user.asset_names.uniq.each do |name| %>
-      <li> <%= name %> </li>
+      <li> <%= name %> <%= current_user.total_current_specific_asset_value(name) %> € </li>
     <% end %>
   </ul>
 
