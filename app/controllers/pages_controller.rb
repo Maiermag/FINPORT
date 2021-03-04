@@ -1,3 +1,6 @@
+require 'alpaca/trade/api'
+require 'rest-client'
+
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home ]
 
@@ -16,37 +19,45 @@ class PagesController < ApplicationController
     @assets = Asset.all
     @acquisitions = Acquisition.all
     @industries = Industry.all.order(:name)
+  end
 
-    # total initial invest
+  def test
+  end
+    
+  def chart_playground
+     # client =  Alpaca::Trade::Api::Client.new
+    # p client.account
+    # url = 'https://paper-api.alpaca.markets/v2/account/portfolio/history'
+    # headers = {
+    #   "APCA-API-KEY-ID" => ENV['ALPACA_API_KEY_ID'], 
+    #   "APCA-API-SECRET-KEY" => ENV['ALPACA_API_SECRET_KEY'],
+    #   'params' => { period: '2M', timeframe: '1D' }
+    # }
 
-    initial_invest = 0
-    @assets.each do |asset|
+    # result = RestClient::Request.execute(
+    #   method: :get, url: url,
+    #   headers: headers
+    # )
+
+    # data = JSON.parse(result.body)
+    # @timestamp = data['timestamp']
+    # @timestamp.map! { |time| Time.at(time).to_datetime.strftime('%d / %m / %y') }
+    # @equity = data['equity']
+    # p data['timestamp']
+
+    @portfolio = Portfolio.last
+    @total_units_invested = 0
+    @total_value_invested = 0
+    @portfolio.assets.each do |asset|
       asset.acquisitions.each do |acquisition|
-        initial_invest += (acquisition.unit_price_bought * acquisition.units_bought)
+        @total_units_invested += acquisition.units_bought
+        @total_value_invested += (acquisition.units_bought * acquisition.unit_price_bought)
       end
     end
-    return initial_invest
-
-    # current total value
-
-    current_value = 0
-    @assets.each do |asset|
-      asset.acquisitions.each do |acquisition|
-        current_value += (asset.current_unit_price * acquisition.units_bought)
-      end
+    @day_data = []
+    @portfolio.assets.first.past_pricings.first(150).each do |past_price|
+      @day_data << { time: past_price.date.strftime('%Y-%m-%d'), value: past_price.unit_price }
     end
-    return current_value
-
-    # performance
-
-    performance_in_percent = (((current_value / invest) * 100) -100)
-    return performance_in_percent.round(2)
-    performance_in_eur = current_value - invest
-
-    # value per asset
-
-    def test
-    end
-
+    @day_data = JSON.generate(@day_data)
   end
 end

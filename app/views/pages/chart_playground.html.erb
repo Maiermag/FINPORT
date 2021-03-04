@@ -1,0 +1,31 @@
+<h1>Pages#home</h1>
+<p>Find me in app/views/pages/home.html.erb</p>
+
+
+<%# <canvas id="portfolio-chart" width="400" height="400" data-chart-data="<%= JSON.generate(@chart_data) %>
+<%# "></canvas> %> 
+<%# %> 
+
+<div id="tv-chart" data-day="<%= @day_data %>">
+
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">
+        Portfolio Chart
+      </div>
+      <div class="card-body">
+          <canvas id="portfolio-chart" 
+            width="400" 
+            height="400" 
+            data-chart-timestamps="<%=@timestamp.to_json %>"
+            data-chart-equities="<%=@equity.to_json %>"
+          ></canvas>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
