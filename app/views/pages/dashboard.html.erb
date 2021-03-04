@@ -2,21 +2,22 @@
 
 <h1> Your Dashboard </h1>
 
-  <h3> Your Investments: <%= @initial_invest %> € </h3>
-
-  <h3> Current value: <%= @current_value %> € </h3>
-
-<h3> Performance: <%= @performance_in_percent %> % , <%= @performance_in_eur %> € </h3>
-
-<h3> Investments: </h3>
+<h4> Your Investments: <%= @initial_invest %> € </h4>
+<h4> Current value: <%= @current_value %> € </h4>
+<h4> Performance: <%= @performance_in_percent %> % , <%= @performance_in_eur %> € </h4>
+<h4> Investments: </h4>
 
   <ul>
+    <% names = [] %>
     <% @assets.each do |asset| %>
-        <li> <%= asset.asset_name %> </li>
+    <% names << asset.asset_name %>
       <% end %>
+          <% names.uniq.each do |name| %>
+          <li> <%=  name %> </li>
+        <% end %>
   </ul>
 
-<h3> Industries: </h3>
+<h4> Industries: </h4>
 
     <% current_industry_value = 0 %>
     <% @assets.uniq.each do |asset| %>
@@ -31,9 +32,7 @@
       <% end %>
   </ul>
 
-
-
-<h3> Asset categories: </h3>
+<h4> Asset categories: </h4>
 
   <ul>
   <% categories = [] %>
