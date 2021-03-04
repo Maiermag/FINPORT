@@ -43,20 +43,22 @@ class PagesController < ApplicationController
 
     # value per asset
   end
-  def testcomponents
 
+  def testcomponents
+  end
     # value per industry
 
+
+
+  def test
     @current_industry_value = 0
     @assets.each do |asset|
-      asset.acquisitions.each do |acquisition|
-        asset.industry.name
-        end
+    asset.acquisitions.each do |acquisition|
+    asset.industry.name
       end
-
-    def test
     end
-
   end
+
+
 end
 

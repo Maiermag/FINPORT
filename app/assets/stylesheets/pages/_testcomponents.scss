@@ -12,3 +12,73 @@
   margin-top: 4.5px;
 }
 
+.confirmbutton {
+  border-radius: 4.5px;
+  background-color: rgba(13,12,29, 0.9);
+  color: #F5F5F4;
+  width: 210px;
+  height: 33px;
+  letter-spacing: 2.4px;
+  font-weight: 100;
+  font-family: poppins;
+  border: 1px solid rgba(13,12,29, 0.6);
+  box-shadow: 3px 3px 3px rgba(13,12,29,0.3);
+}
+
+.minus{
+  width: 45px;
+  background-color: rgba(199,109,126,0.3);
+  border-radius:6px;
+  color: #B14358;
+  font-family: poppins;
+  font-weight: 500;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  letter-spacing:1.5px;
+}
+
+.percentageup {
+  background-color: rgba(106,141,126,0.3);
+  width: 45px;
+  border-radius:6px;
+  color: #6A8D73;
+  font-family: poppins;
+  font-weight: 500;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  letter-spacing:1.2px;
+}
+
+.percentageminus {
+  background-color: rgba(199,109,126,0.3);
+  width: 45px;
+  border-radius:6px;
+  color: #B14358;
+  font-family: poppins;
+  font-weight: 500;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+}
+
+#iconup {
+  font-size: 11px;
+  padding-right: 3px;
+}
+#icondown {
+  font-size: 11px;
+  padding-right: 3px;
+
+}
