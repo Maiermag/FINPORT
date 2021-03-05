@@ -11,8 +11,8 @@
 #     <%= t('hello') %>
 #
 # To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
+
+# I18n.locale = :de
 #
 # This would use the information in config/locales/es.yml.
 #
@@ -31,3 +31,11 @@
 
 en:
   hello: "Hello world"
+  number:
+    currency:
+      format:
+        unit: "€"
+        separator: ","
+        delimiter: "."
+        # Where is the currency sign? %u is the currency unit, %n is the number (default: $5.00)
+        format: "%n %u"
