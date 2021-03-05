@@ -35,12 +35,8 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   innitSideMenu();
-  // initChart();
-  var testData = JSON.parse(document.querySelector('#test-chart').dataset.chartDay);
-  // var dayData = JSON.parse(document.querySelector('#tv-chart').dataset.day);
-  console.log("testData")
-  console.log(testData)
-  initTvChart(testData);
+  
+  initTvChart();
 });
 const innitSideMenu = () => {
    if (document.querySelector("#mySidenav")) {
