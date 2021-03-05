@@ -36,7 +36,11 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   innitSideMenu();
   // initChart();
-  initTvChart();
+  var testData = JSON.parse(document.querySelector('#test-chart').dataset.chartDay);
+  // var dayData = JSON.parse(document.querySelector('#tv-chart').dataset.day);
+  console.log("testData")
+  console.log(testData)
+  initTvChart(testData);
 });
 const innitSideMenu = () => {
    if (document.querySelector("#mySidenav")) {

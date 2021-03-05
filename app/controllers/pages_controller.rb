@@ -58,6 +58,7 @@ class PagesController < ApplicationController
     @portfolio.assets.first.past_pricings.first(150).each do |past_price|
       @day_data << { time: past_price.date.strftime('%Y-%m-%d'), value: past_price.unit_price }
     end
-    @day_data = JSON.generate(@day_data)
+    
+    # @day_data = JSON.generate(@day_data)
   end
 end

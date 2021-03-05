@@ -1,12 +1,12 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
-
+<span id="test-chart" data-chart-day="<%= @day_data.to_json %>"></span>
 
 <%# <canvas id="portfolio-chart" width="400" height="400" data-chart-data="<%= JSON.generate(@chart_data) %>
 <%# "></canvas> %> 
 <%# %> 
 
-<div id="tv-chart" data-day="<%= @day_data %>">
+<div id="tv-chart" data-day="<%= @day_data.to_json %>">
 
 </div>
 
