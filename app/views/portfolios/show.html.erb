@@ -30,6 +30,16 @@
       <% end %>
   </ul>
 
+  <ul>
+    <% @portfolio.industries_by_name.each do |hash| %>
+      <li>
+        <%= hash[:name] %>
+        | Portfolio value: <%= number_to_currency(hash[:portfolio_value]) %>
+        | Portfolio share: <%= hash[:portfolio_share].round(2) %>
+      </li>
+    <% end %>
+  </ul>
+
 <h4> Asset categories: </h4>
 
     <ul>
