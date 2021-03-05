@@ -28,6 +28,11 @@ gem 'redis', '~> 4.0'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
+# rest-client to support Alpaca API
+gem 'rest-client', '~> 2.1'
+# Use the alpaca api
+gem 'alpaca-trade-api'
+
 # Gemfile
 gem 'devise'
 

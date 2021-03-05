@@ -47,6 +47,7 @@ institution17 = Institution.create!(name: "smartbroker")
 institution18 = Institution.create!(name: "onvista-bank")
 institution19 = Institution.create!(name: "sbroker")
 institution20 = Institution.create!(name: "Oskar")
+institution21 = Institution.create!(name: "Faker")
 
 # first seed with Trade Republic
 user1 = User.create!(first_name: "Jonas", last_name: "Mikael", email: "jonas@example.com", password: "123456")
@@ -225,3 +226,15 @@ past_pricings_asset6_23 = PastPricing.create!(date: "2021-03-02 22:00:00", unit_
 # second seed
 user2 = User.create!(first_name: "Bella", last_name: "Stad", email: "Bella@example.com", password: "123456")
 user3 = User.create!(first_name: "Tom", last_name: "Bell", email: "Tom@example.com", password: "123456")
+
+institutionFaker = Institution.create!(name: "Faker")
+portfolioFaker = Portfolio.create!(user: user2, institution: institutionFaker)
+assetFaker = Asset.create!(portfolio: portfolioFaker, asset_name: "Bitcoin", current_unit_price: 40, asset_category: "cryptocurrency", industry: industries["cryptocurrency"])
+acquisition_assetFaker = Acquisition.create(asset: assetFaker, date_bought: "2020-03-04 00:00:00" , units_bought: 100, unit_price_bought: 20)
+acquisition_assetFaker_2 = Acquisition.create(asset: assetFaker, date_bought: "2020-09-04 00:00:00" , units_bought: 150, unit_price_bought: 30)
+
+1000.times do |count|
+ 
+p PastPricing.create!(date: (DateTime.now - count * 1.day), unit_price: rand(10..60), asset: assetFaker)
+
+end
