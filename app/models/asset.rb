@@ -18,9 +18,4 @@ class Asset < ApplicationRecord
        acquisition.unit_price_bought * acquisition.units_bought
     end
   end
-
-  # def asset_categories
-  #    assets.pluck(:asset_category).sort
-  # end
-
 end
