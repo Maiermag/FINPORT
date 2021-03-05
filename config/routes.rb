@@ -7,6 +7,11 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :portfolios, only: [:index, :show, :destroy, :new, :create]
   resources :institutions, only: [:index]
+
+
+  get "/testcomponents", to: 'pages#testcomponents'
+
   get "/chart_playground", to: 'pages#chart_playground', as: :chart_playground
+
 end
 
