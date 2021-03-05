@@ -28,14 +28,22 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import {openNav, closeNav} from '../components/sideMenu';
+import { initChart } from '../plugins/init_chart';
+import { initTvChart } from '../plugins/init_tvchart';
+
 document.addEventListener('turbolinks:load', () => {
-innitSideMenu();
   // Call your functions here, e.g:
   // initSelect2();
+  innitSideMenu();
+  
+  initTvChart();
 });
 const innitSideMenu = () => {
-  document.querySelector("#open_button").addEventListener("click", openNav);
+   if (document.querySelector("#mySidenav")) {
+    document.querySelector("#open_button").addEventListener("click", openNav);
 
-  document.querySelector("#close_button").addEventListener("click", closeNav);
+    document.querySelector("#close_button").addEventListener("click", closeNav);
+   }
+  
 };
   
