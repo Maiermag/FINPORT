@@ -61,7 +61,6 @@ class Portfolio < ApplicationRecord
      assets.pluck(:asset_name)
   end
 
-  # array of hashes:
   def assets_by_name(sort_key = :portfolio_share)
     hashes = asset_names.uniq.map do |asset_name|
       current_value = total_current_specific_asset_value(asset_name)
@@ -69,25 +68,31 @@ class Portfolio < ApplicationRecord
         name: asset_name,
         portfolio_value: current_value,
         portfolio_share: ((current_value / total_current_portfolio_value) * 100),
-        performance: (((total_current_specific_asset_value(asset_name)/ total_initial_specific_asset_value(asset_name)) * 100) - 100)
+        performance: (((total_current_specific_asset_value(asset_name) / total_initial_specific_asset_value(asset_name)) * 100) - 100)
       }
     end
     hashes.sort{ |a,b| b[sort_key] <=> a[sort_key]}
   end
 
-  # def industry_names
-  #    industries.pluck(:name)
-  # end
-
-    # array of hashes:
   def industries_by_name(sort_key = :portfolio_share)
     hashes = industries.uniq.map do |industry|
       current_value = total_current_asset_value(industry)
       {
-        name: industry.name,
+        name: industry.name.capitalize,
         portfolio_value: current_value,
         portfolio_share: ((current_value / total_current_portfolio_value) * 100),
-        performance: (((total_current_specific_asset_value(asset_name)/ total_initial_specific_asset_value(asset_name)) * 100) - 100)
+      }
+    end
+    hashes.sort{ |a,b| b[sort_key] <=> a[sort_key]}
+  end
+
+  def categories_by_name(sort_key = :portfolio_share)
+    hashes = asset_categories.uniq.map do |asset_category|
+      current_value = total_current_category_value(asset_category)
+      {
+        name: asset_category.capitalize,
+        portfolio_value: current_value,
+        portfolio_share: ((current_value / total_current_portfolio_value) * 100),
       }
     end
     hashes.sort{ |a,b| b[sort_key] <=> a[sort_key]}

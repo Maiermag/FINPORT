@@ -21,36 +21,26 @@
 <h4> Sectors: </h4>
 
   <ul>
-    <% @industries.uniq.each do |industry| %>
-        <li>
-          <%= industry.name.capitalize %>
-          | Total current value: <%= @portfolio.total_current_industry_value(industry) %> €
-          | Portfolio share: <%= (((@portfolio.total_current_industry_value(industry) / @current_value) * 100)).round(2) %> %
-        </li>
-      <% end %>
-  </ul>
-
-  <ul>
     <% @portfolio.industries_by_name.each do |hash| %>
       <li>
         <%= hash[:name] %>
         | Portfolio value: <%= number_to_currency(hash[:portfolio_value]) %>
-        | Portfolio share: <%= hash[:portfolio_share].round(2) %>
+        | Portfolio share: <%= hash[:portfolio_share].round(2) %> %
       </li>
     <% end %>
   </ul>
 
 <h4> Asset categories: </h4>
 
-    <ul>
-      <% @portfolio.asset_categories.uniq.each do |asset_category| %>
-        <li> <%= asset_category.capitalize %>
-          | Total current value: <%= @portfolio.total_current_category_value(asset_category) %> €
-          | Portfolio share: <%=(((@portfolio.total_current_category_value(asset_category) / @current_value) * 100)).round(2) %> %
-        </li>
-      <% end %>
-    </ul>
-    <ul>
+  <ul>
+    <% @portfolio.categories_by_name.each do |hash| %>
+      <li>
+        <%= hash[:name] %>
+        | Portfolio value: <%= number_to_currency(hash[:portfolio_value]) %>
+        | Portfolio share: <%= hash[:portfolio_share].round(2) %> %
+      </li>
+    <% end %>
+  </ul>
 
 
 <%= link_to "[ < go back ]", portfolios_path %>
