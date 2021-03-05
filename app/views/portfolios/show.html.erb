@@ -1,69 +1,50 @@
 
-<%= render 'shared/side_menu' %>
 <div id="main">
 
-<%= link_to "[ < go back ]", portfolios_path %>
-
 <h1> <%= @portfolio.institution.name %> </h1>
+<h4> Your investments: <%= number_to_currency(@invest) %> </h4>
+<h4> Current value: <%= number_to_currency(@current_value) %> </h4>
+<h4> Performance: <%= @performance_percent %> % , <%= number_to_currency(@performance_eur) %> </h4>
+<h4> Investments: </h4>
 
-    <% invest = 0 %>
-    <% @assets.each do |asset| %>
-      <% asset.acquisitions.each do |acquisition| %>
-        <% invest += (acquisition.unit_price_bought * acquisition.units_bought)%>
-      <% end %>
+    <ul>
+    <% @portfolio.assets_by_name.each do |hash| %>
+      <li>
+        <%= hash[:name] %>
+        | Portfolio value: <%= number_to_currency(hash[:portfolio_value]) %>
+        | Portfolio share: <%= hash[:portfolio_share].round(2) %> %
+        | Performance: <%= hash[:performance].round(2) %> %
+      </li>
     <% end %>
-
-  <h3> Your investments: <%= invest.round(2) %> € </h3>
-
-    <% current_value = 0 %>
-      <% @assets.each do |asset| %>
-        <% asset.acquisitions.each do |acquisition| %>
-          <% current_value += (asset.current_unit_price * acquisition.units_bought)%>
-        <% end %>
-      <% end %>
-
-  <% performance1 = ((current_value / invest) * 100) - 100 %>
-  <% performance2 = current_value - invest %>
-
-  <h3> Current value: <%= current_value.round(2) %> € </h3>
-
-    <% performance1 = (current_value / invest) * 100 %>
-    <% performance2 = current_value - invest %>
-
-  <h3> Performance: <%= performance1.round(2) %> % , <%= performance2.round(2) %> € </h3>
-
-  <h3> Investments: </h3>
-
-  <ul>
-    <% @assets.each do |asset| %>
-        <li> <%= asset.asset_name.capitalize %> </li>
-      <% end %>
   </ul>
 
-  <h3> Industries: </h3>
+<h4> Sectors: </h4>
 
-    <ul>
-      <% @assets.each do |asset| %>
-          <li> <%= asset.industry.name.capitalize %> </li>
-        <% end %>
-    </ul>
+  <ul>
+    <% @portfolio.industries_by_name.each do |hash| %>
+      <li>
+        <%= hash[:name] %>
+        | Portfolio value: <%= number_to_currency(hash[:portfolio_value]) %>
+        | Portfolio share: <%= hash[:portfolio_share].round(2) %> %
+      </li>
+    <% end %>
+  </ul>
+
+<h4> Asset categories: </h4>
+
+  <ul>
+    <% @portfolio.categories_by_name.each do |hash| %>
+      <li>
+        <%= hash[:name] %>
+        | Portfolio value: <%= number_to_currency(hash[:portfolio_value]) %>
+        | Portfolio share: <%= hash[:portfolio_share].round(2) %> %
+      </li>
+    <% end %>
+  </ul>
 
 
-  <h3> Asset categories: </h3>
-
-    <ul>
-    <% categories = [] %>
-    <% @assets.each do |asset| %>
-        <% categories << asset.asset_category %>
-        <% end %>
-          <% categories.uniq.each do |category| %>
-            <li> <%=  category.capitalize %> </li>
-          <% end %>
-    </ul>
-
-
-  <%= link_to "< go back", portfolios_path %>
-
+<%= link_to "[ < go back ]", portfolios_path %>
+<%= link_to "[ x remove portfolio ]", portfolio_path(@portfolio), method: :delete, data: {confirm: "Are you sure?"} %>
 </div>
 
-<%= link_to "[ x remove portfolio ]", portfolio_path(@portfolio), method: :delete, data: {confirm: "Are you sure?"} %>
+

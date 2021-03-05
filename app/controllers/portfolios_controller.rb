@@ -7,8 +7,30 @@ class PortfoliosController < ApplicationController
   def show
     @portfolio = Portfolio.find(params[:id])
     @assets = @portfolio.assets
-  end
+    @industries = @portfolio.industries
 
+    # total initial invest for portfolio
+    @invest = 0
+    @assets.each do |asset|
+      asset.acquisitions.each do |acquisition|
+        @invest += (acquisition.unit_price_bought * acquisition.units_bought)
+        end
+    end
+    @invest = @invest.round(2)
+
+    # current portfolio value
+    @current_value = 0
+    @assets.each do |asset|
+      asset.acquisitions.each do |acquisition|
+        @current_value += (asset.current_unit_price * acquisition.units_bought)
+      end
+    end
+
+    # current portfolio performance in % and eur
+    @performance_percent = (((@current_value / @invest) * 100) - 100).round(2)
+    @performance_eur = (@current_value - @invest).round(2)
+
+  end
 
   def create
     @institution = Institution.find(params[:portfolio][:institution_id])

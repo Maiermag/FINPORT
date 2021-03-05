@@ -2,45 +2,56 @@
 
 <h1> Your Dashboard </h1>
 
-  <h3> Your Investments: <%= @initial_invest %> € </h3>
+<h4> Your total investments: <%= number_to_currency(@initial_invest) %> </h4>
+<h4> Current portfolio value: <%= number_to_currency(@current_value) %> </h4>
+<h4> Performance: <%= @performance_in_percent %> % , <%= number_to_currency(@performance_in_eur)%> </h4>
 
-  <h3> Current value: <%= @current_value %> € </h3>
-
-<h3> Performance: <%= @performance_in_percent %> % , <%= @performance_in_eur %> € </h3>
-
-<h3> Investments: </h3>
+<h4> Your assets: </h4>
 
   <ul>
-    <% @assets.each do |asset| %>
-        <li> <%= asset.asset_name %> </li>
-      <% end %>
-  </ul>
-
-<h3> Industries: </h3>
-
-    <% current_industry_value = 0 %>
-    <% @assets.uniq.each do |asset| %>
-      <% asset.acquisitions.each do |acquisition| %>
-        <% asset.industry.name %>
-      <% end %>
+    <% current_user.assets_by_name.each do |hash| %>
+      <li>
+        <%= hash[:name] %>
+        | Portfolio value: <%= number_to_currency(hash[:portfolio_value]) %>
+        | Portfolio share: <%= hash[:portfolio_share].round(2) %> %
+        | Performance: <%= hash[:performance].round(2) %> %
+      </li>
     <% end %>
-
-  <ul>
-    <% @industries.each do |industry| %>
-        <li> <%= industry.name.capitalize %> </li>
-      <% end %>
   </ul>
 
-
-
-<h3> Asset categories: </h3>
+<h4> Sectors: </h4>
 
   <ul>
-  <% categories = [] %>
-   <% @assets.each do |asset| %>
-      <% categories << asset.asset_category %>
-      <% end %>
-        <% categories.uniq.each do |category| %>
-          <li> <%=  category.capitalize %> </li>
-        <% end %>
+    <% current_user.industries_by_name.each do |hash| %>
+      <li>
+        <%= hash[:name] %>
+        | Portfolio value: <%= number_to_currency(hash[:portfolio_value]) %>
+        | Portfolio share: <%= hash[:portfolio_share].round(2) %> %
+      </li>
+    <% end %>
   </ul>
+
+<h4> Asset categories: </h4>
+
+  <ul>
+    <% current_user.categories_by_name.each do |hash| %>
+      <li>
+        <%= hash[:name] %>
+        | Portfolio value: <%= number_to_currency(hash[:portfolio_value]) %>
+        | Portfolio share: <%= hash[:portfolio_share].round(2) %> %
+      </li>
+    <% end %>
+  </ul>
+
+  <h4> Your portfolios: </h4>
+
+  <ul>
+  <% current_user.portfolios.each do |portfolio| %>
+    <li> <%= link_to portfolio.institution.name, portfolio_path(portfolio) %></li>
+  <% end %>
+</ul>
+
+<%= link_to "[ + add portfolio ]", institutions_path %>
+
+
+
