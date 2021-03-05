@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   resources :portfolios, only: [:index, :show, :destroy, :new, :create]
   resources :institutions, only: [:index]
 
+
   get "/testcomponents", to: 'pages#testcomponents'
+
+  get "/chart_playground", to: 'pages#chart_playground', as: :chart_playground
+
 end
 

@@ -12,11 +12,13 @@
 <div class="containertry">
   <h1 id="connectionsheader"> Manage Connections </h1>
 
+
   <ul class="portfoliosblock">
     <% @portfolios.each do |portfolio| %>
       <li class="portfolioseach"> <%= link_to portfolio.institution.name, portfolio_path(portfolio) %> <%= link_to "[ x remove ]", portfolio_path(portfolio), method: :delete, data: {confirm: "Are you sure?"} %></li>
     <% end %>
   </ul>
+
 
   <%= link_to "[ + add new connection ]", institutions_path %>
 </div>

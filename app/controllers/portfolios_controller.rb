@@ -7,6 +7,7 @@ class PortfoliosController < ApplicationController
   def show
     @portfolio = Portfolio.find(params[:id])
     @assets = @portfolio.assets
+    @industries = @portfolio.industries
 
     # total initial invest for portfolio
     @invest = 0
