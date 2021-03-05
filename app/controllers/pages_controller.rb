@@ -27,11 +27,24 @@ class PagesController < ApplicationController
     @performance_in_percent = (((@current_value / @initial_invest) * 100) -100).round(2)
     @performance_in_eur = (@current_value - @initial_invest).round(2)
 
+
+    # value per asset
+  end
+
+  def testcomponents
+  end
+
     # value per industry
 
-    @current_industry_value = 0
+  # def test
+  #   # @current_industry_value = 0
 
-  end
+  #   # @assets.each do |asset|
+  #   # asset.acquisitions.each do |acquisition|
+  #   # asset.industry.name
+  #   #   end
+  #   # end
+  # end
 
   def test
   end
@@ -99,5 +112,7 @@ class PagesController < ApplicationController
     @year_data = @year_data.first(15)
 
     # @day_data = JSON.generate(@day_data)
+
   end
 end
+

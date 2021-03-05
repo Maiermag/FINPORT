@@ -1,16 +1,28 @@
-<div id="main">
+
+<h1 class="finport">finport</h1>
+<div class="bottommenubackground">
+  <div class="bottommenu d-flex justify-content-around">
+    <%= render 'shared/side_menu' %>
+    <!-- <p class="nbicons"><i class="fas fa-bars"></i></p> -->
+    <p class="nbicons"><i class="fas fa-search"></i></p>
+    <p class="nbicons"><i class="fas fa-book"></i></p>
+    <p class="nbicons"><i class="fas fa-user-circle"></i></p>
+  </div>
+</div>
 
 <%= link_to "[ < go back ]", "#" %>
 
-<h1> Manage Connections </h1>
+<div class="containertry">
+  <h1 id="connectionsheader"> Manage Connections </h1>
 
-<ul>
-  <% current_user.portfolios.each do |portfolio| %>
-    <li> <%= portfolio.institution.name %> <%= link_to "[ > show ]", portfolio_path(portfolio) %> <%= link_to "[ x remove ]", portfolio_path(portfolio), method: :delete, data: {confirm: "Are you sure?"} %></li>
-  <% end %>
-</ul>
 
-<%= link_to "[ + add new connection ]", institutions_path %>
-<%= link_to "[ cancel ]", dashboard_path %>
+  <ul class="portfoliosblock">
+    <% @portfolios.each do |portfolio| %>
+      <li class="portfolioseach"> <%= link_to portfolio.institution.name, portfolio_path(portfolio) %> <%= link_to "[ x remove ]", portfolio_path(portfolio), method: :delete, data: {confirm: "Are you sure?"} %></li>
+    <% end %>
+  </ul>
 
-</div>
+
+
+  <%= link_to "[ + add new connection ]", institutions_path %>
+
