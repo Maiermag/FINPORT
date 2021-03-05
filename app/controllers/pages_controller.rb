@@ -41,20 +41,20 @@ class PagesController < ApplicationController
     # p client.account
     # url = 'https://paper-api.alpaca.markets/v2/account/portfolio/history'
     # headers = {
-    #   "APCA-API-KEY-ID" => ENV['ALPACA_API_KEY_ID'], 
+    #   "APCA-API-KEY-ID" => ENV['ALPACA_API_KEY_ID'],
     #   "APCA-API-SECRET-KEY" => ENV['ALPACA_API_SECRET_KEY'],
     #   'params' => { period: '2M', timeframe: '1D' }
     # }
     # result = RestClient::Request.execute(
     #   method: :get, url: url,
     #   headers: headers
-    # ) 
+    # )
     # data = JSON.parse(result.body)
     # @timestamp = data['timestamp']
     # @timestamp.map! { |time| Time.at(time).to_datetime.strftime('%d / %m / %y') }
     # @equity = data['equity']
     # p data['timestamp']
-    
+
     @portfolio = Portfolio.last
     @total_units_invested = 0
     @total_value_invested = 0
@@ -72,19 +72,19 @@ class PagesController < ApplicationController
     @year_data = []
 
     @portfolio.assets.first.past_pricings.order('date asc').each do |past_price|
-      if @week_data.empty? 
+      if @week_data.empty?
         @week_data << { time: past_price.date.strftime('%Y-%m-%d'), value: past_price.unit_price }
       elsif @week_data.last[:time].to_date <= past_price.date - 7.days
         @week_data << { time: past_price.date.strftime('%Y-%m-%d'), value: past_price.unit_price }
       end
-    
-      if @month_data.empty? 
+
+      if @month_data.empty?
         @month_data << { time: past_price.date.strftime('%Y-%m-%d'), value: past_price.unit_price }
       elsif @month_data.last[:time].to_date <= past_price.date - 30.days
         @month_data << { time: past_price.date.strftime('%Y-%m-%d'), value: past_price.unit_price }
       end
 
-      if @year_data.empty? 
+      if @year_data.empty?
         @year_data << { time: past_price.date.strftime('%Y-%m-%d'), value: past_price.unit_price }
       elsif @year_data.last[:time].to_date <= past_price.date - 365.days
         @year_data << { time: past_price.date.strftime('%Y-%m-%d'), value: past_price.unit_price }
@@ -92,11 +92,12 @@ class PagesController < ApplicationController
 
       @day_data << { time: past_price.date.strftime('%Y-%m-%d'), value: past_price.unit_price }
     end
-    
+
     @day_data = @day_data.first(150)
     @week_data = @week_data.first(150)
     @month_data = @month_data.first(150)
     @year_data = @year_data.first(15)
 
     # @day_data = JSON.generate(@day_data)
+  end
 end
