@@ -18,13 +18,12 @@
           <%= link_to "Portfolios", portfolios_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "FE Test Page", frontend_test_path, class: "nav-link" %>
+          <%= link_to "Add Connection", institutions_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/271/nerd-face_1f913.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Add Connection", institutions_path, class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
+            <%= link_to "FE Test Page", frontend_test_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
