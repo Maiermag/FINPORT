@@ -1,12 +1,21 @@
-<div id="main">
+<div class="main">
 
-<%= link_to "[ < go back ]", portfolios_path %>
+<h1 class="portfolio-header"> Dashboard </h1>
 
-<h1> Your Dashboard </h1>
+  <div class="dashboard-top">
+    <div class="dashboard-box-1">
+      <p class="header"> PORTFOLIO VALUE </p>
+      <p class="value"> <%= number_to_currency(@current_value) %> </p>
+    </div>
+    <div>
+      <p class="header"> PERFORMANCE </p>
+      <p class="value"> <%= number_to_currency(@performance_in_eur)%> </p>
+    </div>
+    <p class="performance pos-neg"> <%= @performance_in_percent %> % </p>
+    <!-- <p> Your total investments: <%= number_to_currency(@initial_invest) %> </p> -->
+  </div>
 
-<h4> Your total investments: <%= number_to_currency(@initial_invest) %> </h4>
-<h4> Current portfolio value: <%= number_to_currency(@current_value) %> </h4>
-<h4> Performance: <%= @performance_in_percent %> % , <%= number_to_currency(@performance_in_eur)%> </h4>
+
 <div class="tvwrapper">
   <div id="tv-chart" data-day="<%= @day_data.to_json %>"
                     data-week="<%= @week_data.to_json %>"
@@ -14,7 +23,27 @@
                     data-year="<%= @year_data.to_json %>">
   </div>
 </div>
-<h4> Your assets: </h4>
+
+<div class="sectionheader">
+<h6 class="sectionheader1"> INVESTMENTS</h6>
+<p class="sectionheader2"> PERFORMANCE </p>
+</div>
+
+    <ul class="detailslist">
+    <% current_user.assets_by_name.each do |hash| %>
+      <li class="details">
+        <div class="details2">
+        <p class="detailsheader"> <%= hash[:name] %> </p>
+        <p> <%= number_to_currency(hash[:portfolio_value]) %> </p>
+        </div>
+        <p class="pos-neg"> <%= hash[:performance].round(2) %> % </p>
+        <!-- | Portfolio share: <%= hash[:portfolio_share].round(2) %> % -->
+      </li>
+    <% end %>
+  </ul>
+
+
+<!-- <h4> Your assets: </h4>
 
   <ul>
     <% current_user.assets_by_name.each do |hash| %>
@@ -25,7 +54,7 @@
         | Performance: <%= hash[:performance].round(2) %> %
       </li>
     <% end %>
-  </ul>
+  </ul> -->
 
 <h4> Sectors: </h4>
 
