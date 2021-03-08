@@ -118,7 +118,6 @@ class PagesController < ApplicationController
     @year_data = @year_data.first(15)
 
     # @day_data = JSON.generate(@day_data)
-
   end
 end
 
