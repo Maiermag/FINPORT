@@ -42,7 +42,7 @@ const initTvChart = () => {
   var monthData = JSON.parse(document.querySelector('#tv-chart').dataset.month);
   var yearData = JSON.parse(document.querySelector('#tv-chart').dataset.year);
 
-  
+
 
   var seriesesData = new Map([
     ['1D', dayData ],
@@ -50,7 +50,7 @@ const initTvChart = () => {
     ['1M', monthData ],
     ['1Y', yearData ],
   ]);
-  
+
   var switcherElement = createSimpleSwitcher(intervals, intervals[0], syncToInterval);
 
   var chartElement = document.querySelector('#tv-chart');
@@ -58,7 +58,7 @@ const initTvChart = () => {
   var chart = createChart(chartElement, {
     width: 300,
     height: 200,
-   
+
     layout: {
       backgroundColor: '#E0E0E0',
       textColor: '#131B23',
@@ -107,4 +107,4 @@ const initTvChart = () => {
 };
 
 export { initTvChart };
-199, 109,126
+

@@ -1,7 +1,7 @@
 // SCSS for the chart switcher buttons - ** Note : chart colors and background on init_tvchart.js
 
 .switcher {
-	display: flex;
+	//display: flex;
 	align-items: center;
 	height: 30px;
 	margin-top: 8px;
@@ -35,4 +35,10 @@
 .switcher-active-item,
 .switcher-active-item:hover {
 	background-color: #e1eff9;
+}
+
+.tvwrapper {
+  position: relative;
+  height:300px;
+  z-index: 0;
 }

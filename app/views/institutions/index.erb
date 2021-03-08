@@ -4,9 +4,9 @@
   <h1 class="manage" id="connectionsheader"> Manage Connections </h1>
 
 
-  <p > Connect to a new financial institution </p>
+  <h3>Connect to a new financial institution</h3>
 
-  <%= simple_form_for(@portfolio) do |f| %>
+  <%= simple_form_for @portfolio, :html=> { class: 'inputinstitutions' } do |f| %>
     <%= f.association :institution, collection: @institutions %>
     <%= f.submit "Add Connection", class: 'confirmbuttonpurple'%>
   <% end %>
