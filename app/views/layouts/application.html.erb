@@ -5,7 +5,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Sonsie+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sonsie+One&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,11 +15,13 @@
   </head>
 
   <body>
+
     <h1 class="finport">finport</h1>
     <% render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <%= render 'shared/bottommenu'  %>
-
+    <% unless current_page?("/") || params[:controller] =~ /^devise/ %>
+      <%= render 'shared/bottommenu'  %>
+    <% end  %>
     <%= yield %>
 
   </body>

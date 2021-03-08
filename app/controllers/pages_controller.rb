@@ -36,8 +36,6 @@ class PagesController < ApplicationController
 
     # value per industry
 
-
-
   # def test
   #   # @current_industry_value = 0
 
@@ -47,10 +45,6 @@ class PagesController < ApplicationController
   #   #   end
   #   # end
   # end
-
-
-
-
 
   def test
   end

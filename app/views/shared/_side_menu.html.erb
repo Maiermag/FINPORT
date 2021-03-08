@@ -1,11 +1,11 @@
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" id="close_button" onclick="closeNav()">&times;</a>
   <%= link_to 'Dashboard', dashboard_path %>
-  <% current_user.portfolios.each do |portfolio| %>
+  <% current_user&.portfolios.each do |portfolio| %>
     <%= link_to "#{portfolio.institution.name}", portfolio_path(portfolio) %>
   <% end %>
   <%= link_to 'Add a new institution', institutions_path %>
-  <%= link_to 'Sign Out', institutions_path %>
+  <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
 </div>
 
 <!-- Use any element to open the sidenav -->
