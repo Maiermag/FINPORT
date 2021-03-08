@@ -8,12 +8,12 @@
 .top {
   display: flex;
   justify-content: space-between;
-  padding: 0px, 15px, 0px, 30px;
+  padding-top: 20px;
+  padding-bottom: 30px;
 }
 
 .topbox {
   width: 50%;
-  height: 60%;
   text-align: right;
 }
 
@@ -23,5 +23,20 @@
   padding-bottom: 20px;
   padding-right: 10px;
   padding-left: 10px;
+}
 
+.value-proposition-1 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.img {
+}
+
+.icon {
+  font-size: 25px;
+}
+
+.three {
+  text-align: left;
 }
