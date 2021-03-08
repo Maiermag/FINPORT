@@ -33,34 +33,34 @@
     <% end %>
   </ul>
 
-<div>
-<h5> Sectors </h5>
+<div class="sectionheader">
+<h5 class="sectionheader1"> Sectors </h5>
 <p> Portfolio share </p>
 </div>
 
-  <ul>
+  <ul class="detailslist">
     <% @portfolio.industries_by_name.each do |hash| %>
-      <li>
-        <div>
-          <p> <%= hash[:name] %> </p>
-          <p> <%= hash[:portfolio_share].round(2) %> % </p>
+      <li class="details">
+        <div class="details2">
+          <p class="detailsheader"> <%= hash[:name] %> </p>
+          <p> <%= number_to_currency(hash[:portfolio_value]) %> </p>
         </div>
-        <p> <%= number_to_currency(hash[:portfolio_value]) %> </p>
+          <p> <%= hash[:portfolio_share].round(2) %> % </p>
       </li>
     <% end %>
   </ul>
 
 
-<div>
-<h5> Assets </h5>
+<div class="sectionheader">
+<h5 class="sectionheader1"> Assets </h5>
 <p> Portfolio share </p>
 </div>
 
-  <ul>
+  <ul class="detailslist">
     <% @portfolio.categories_by_name.each do |hash| %>
-      <li>
-        <div>
-        <p> <%= hash[:name] %> </p>
+      <li class="details">
+        <div class="details2">
+        <p class="detailsheader"> <%= hash[:name] %> </p>
         <p> <%= hash[:portfolio_share].round(2) %> % </p>
         </div>
         <p> <%= number_to_currency(hash[:portfolio_value]) %> </p>
