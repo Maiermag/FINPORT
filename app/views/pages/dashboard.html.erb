@@ -42,6 +42,53 @@
     <% end %>
   </ul>
 
+<div class="sectionheader">
+  <h6 class="sectionheader1"> SECTORS </h6>
+  <p class="sectionheader2"> PORTFOLIO SHARE </p>
+</div>
+
+  <ul class="detailslist">
+    <% current_user.industries_by_name.each do |hash| %>
+      <li class="details">
+        <div class="details2">
+          <p class="detailsheader"> <%= hash[:name] %> </p>
+          <p> <%= number_to_currency(hash[:portfolio_value]) %> </p>
+        </div>
+          <p> <%= hash[:portfolio_share].round(2) %> % </p>
+      </li>
+    <% end %>
+  </ul>
+
+<div class="sectionheader">
+<h6 class="sectionheader1"> ASSET CLASSES </h6>
+<p class="sectionheader2"> PORTFOLIO SHARE </p>
+</div>
+
+  <ul class="detailslist">
+    <% current_user.categories_by_name.each do |hash| %>
+      <li class="details">
+        <div class="details2">
+        <p class="detailsheader"> <%= hash[:name] %> </p>
+        <p> <%= number_to_currency(hash[:portfolio_value]) %> </p>
+        </div>
+        <p> <%= hash[:portfolio_share].round(2) %> % </p>
+      </li>
+    <% end %>
+  </ul>
+
+<h6 class="sectionheader1"> YOUR PORTFOLIOS </h6>
+
+  <ul class="detailslist">
+    <% current_user.portfolios.each do |portfolio| %>
+      <div class="institutions">
+        <li> <%= link_to portfolio.institution.name, portfolio_path(portfolio) %> </li>
+        <li class="view"> <%= link_to "view", portfolio_path(portfolio) %> </li>
+      </div>
+    <% end %>
+      <li class="institutions" > <%= link_to "+ Add portfolio", institutions_path %> </li>
+  </ul>
+
+
 
 <!-- <h4> Your assets: </h4>
 
@@ -56,7 +103,7 @@
     <% end %>
   </ul> -->
 
-<h4> Sectors: </h4>
+<!-- <h4> Sectors: </h4>
 
   <ul>
     <% current_user.industries_by_name.each do |hash| %>
@@ -66,9 +113,9 @@
         | Portfolio share: <%= hash[:portfolio_share].round(2) %> %
       </li>
     <% end %>
-  </ul>
+  </ul> -->
 
-<h4> Asset categories: </h4>
+<!-- <h4> Asset categories: </h4>
 
   <ul>
     <% current_user.categories_by_name.each do |hash| %>
@@ -78,17 +125,7 @@
         | Portfolio share: <%= hash[:portfolio_share].round(2) %> %
       </li>
     <% end %>
-  </ul>
-
-  <h4> Your portfolios: </h4>
-
-  <ul>
-  <% current_user.portfolios.each do |portfolio| %>
-    <li> <%= link_to portfolio.institution.name, portfolio_path(portfolio) %></li>
-  <% end %>
-</ul>
-
-<%= link_to "[ + add portfolio ]", institutions_path %>
+  </ul> -->
 
 </div>
 

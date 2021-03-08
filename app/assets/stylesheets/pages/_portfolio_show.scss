@@ -102,3 +102,19 @@ h1 {
   color: #24b584;
   font-weight: 400;
 }
+
+.institutions {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 7px;
+}
+
+.view {
+  font-size: 12px;
+  font-weight: 300;
+  color: #969696;
+}
+
+.link {
+  color: blue;
+}
