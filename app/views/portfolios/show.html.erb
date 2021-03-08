@@ -1,10 +1,19 @@
 
-<div id="main">
-
 <h1> <%= @portfolio.institution.name %> </h1>
-<h4> Your investments: <%= number_to_currency(@invest) %> </h4>
-<h4> Current value: <%= number_to_currency(@current_value) %> </h4>
-<h4> Performance: <%= @performance_percent %> % , <%= number_to_currency(@performance_eur) %> </h4>
+
+<div>
+  <div>
+    <p> Your investments: </p>
+    <p> <%= number_to_currency(@current_value) %> </p>
+  </div>
+  <div>
+    <p> Performance: </p>
+    <p> <%= number_to_currency(@performance_eur) %> </p>
+  </div>
+    <p> <%= @performance_percent %> % </p>
+    <!-- <h4> Initial invest: <%= number_to_currency(@invest) %> </h4> -->
+</div>
+
 <h4> Investments: </h4>
 
     <ul>
@@ -23,9 +32,11 @@
   <ul>
     <% @portfolio.industries_by_name.each do |hash| %>
       <li>
+        <div>
         <%= hash[:name] %>
-        | Portfolio value: <%= number_to_currency(hash[:portfolio_value]) %>
         | Portfolio share: <%= hash[:portfolio_share].round(2) %> %
+        </div>
+        | Portfolio value: <%= number_to_currency(hash[:portfolio_value]) %>
       </li>
     <% end %>
   </ul>
@@ -45,6 +56,5 @@
 
 <%= link_to "[ < go back ]", portfolios_path %>
 <%= link_to "[ x remove portfolio ]", portfolio_path(@portfolio), method: :delete, data: {confirm: "Are you sure?"} %>
-</div>
 
 
