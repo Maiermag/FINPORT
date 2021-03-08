@@ -3,31 +3,40 @@
 
 <div>
   <div>
-    <p> Your investments: </p>
+    <p> Portfolio value </p>
     <p> <%= number_to_currency(@current_value) %> </p>
   </div>
   <div>
-    <p> Performance: </p>
+    <p> Performance </p>
     <p> <%= number_to_currency(@performance_eur) %> </p>
   </div>
     <p> <%= @performance_percent %> % </p>
     <!-- <h4> Initial invest: <%= number_to_currency(@invest) %> </h4> -->
 </div>
 
-<h4> Investments: </h4>
+<div>
+<h5> Investments </h5>
+<p> Since start </p>
+</div>
 
     <ul>
     <% @portfolio.assets_by_name.each do |hash| %>
       <li>
-        <%= hash[:name] %>
-        | Portfolio value: <%= number_to_currency(hash[:portfolio_value]) %>
-        | Portfolio share: <%= hash[:portfolio_share].round(2) %> %
-        | Performance: <%= hash[:performance].round(2) %> %
+        <div>
+        <p> <%= hash[:name] %> </p>
+        <p> <%= hash[:performance].round(2) %> % </p>
+        </div>
+        <p> <%= number_to_currency(hash[:portfolio_value]) %> </p>
+        <!-- | Portfolio share: <%= hash[:portfolio_share].round(2) %> % -->
+
       </li>
     <% end %>
   </ul>
 
-<h4> Sectors: </h4>
+<div>
+<h5> Sectors </h5>
+<p> Portfolio share </p>
+</div>
 
   <ul>
     <% @portfolio.industries_by_name.each do |hash| %>
@@ -41,7 +50,8 @@
     <% end %>
   </ul>
 
-<h4> Asset categories: </h4>
+<h5> Assets </h5>
+<p> Portfolio share </p>
 
   <ul>
     <% @portfolio.categories_by_name.each do |hash| %>

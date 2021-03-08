@@ -1,15 +1,3 @@
-
-<h1 class="finport">finport</h1>
-<div class="bottommenubackground">
-  <div class="bottommenu d-flex justify-content-around">
-    <%= render 'shared/side_menu' %>
-    <!-- <p class="nbicons"><i class="fas fa-bars"></i></p> -->
-    <p class="nbicons"><i class="fas fa-search"></i></p>
-    <p class="nbicons"><i class="fas fa-book"></i></p>
-    <p class="nbicons"><i class="fas fa-user-circle"></i></p>
-  </div>
-</div>
-
 <%= link_to "[ < go back ]", "#" %>
 
 <div class="containertry">
@@ -22,7 +10,9 @@
     <% end %>
   </ul>
 
-
-
   <%= link_to "[ + add new connection ]", institutions_path %>
+
+
+  <button id="try" class="confirmbutton"><%= link_to "[ + add new connection ]", institutions_path %></button>
+</div>
 
