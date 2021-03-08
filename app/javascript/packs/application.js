@@ -30,12 +30,13 @@ import "bootstrap";
 import {openNav, closeNav} from '../components/sideMenu';
 import { initChart } from '../plugins/init_chart';
 import { initTvChart } from '../plugins/init_tvchart';
+import { percentageColouring } from '../components/show_page';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   innitSideMenu();
-  
+  percentageColouring();
   initTvChart();
 });
 const innitSideMenu = () => {
@@ -44,6 +45,5 @@ const innitSideMenu = () => {
 
     document.querySelector("#close_button").addEventListener("click", closeNav);
    }
-  
+
 };
-  
