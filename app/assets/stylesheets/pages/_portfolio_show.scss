@@ -1,20 +1,28 @@
+.main {
+  padding: 30px 15px 80px 15px;
+}
+
+
 h1 {
   font-family: poppins;
   font-weight: 100;
   font-size: 39px;
   letter-spacing: 0.9px;
+  padding-bottom: 15px;
 }
 
 
 .dashboard-top {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 15px;
 
 }
 
 .dashboard-box-1 {
   // justify-content: space-between;
   // width: 33%;
+  text-align: right;
 }
 
 .dashboard-performance {
@@ -26,12 +34,27 @@ h1 {
 }
 
 .value {
-
+  font-weight: 600;
+  // font-size: 15px;
 }
 
 .sectionheader {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+.sectionheader1 {
+  font-size: 12px;
+  font-weight: 400;
+  color: #969696;
+}
+
+.sectionheader2 {
+  font-size: 12px;
+  font-weight: 300;
+  color: #969696;
 }
 
 // .sectionheader1 {
@@ -58,4 +81,14 @@ h1 {
 
 .detailsheader {
   margin: 0 0 0 0;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.performancedev-neg {
+  color: red;
+}
+
+.performancedev-pos {
+  color: green;
 }

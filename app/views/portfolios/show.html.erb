@@ -1,5 +1,8 @@
 
-<h1> <%= @portfolio.institution.name %> </h1>
+
+<div class="main">
+
+<h1 class="portfolio-header"> <%= @portfolio.institution.name %> </h1>
 
 <div class="dashboard-top">
   <div class="dashboard-box-1">
@@ -15,8 +18,8 @@
 </div>
 
 <div class="sectionheader">
-<h5 class="sectionheader1"> Investments </h5>
-<p class="sectionheader1"> Performance </p>
+<h6 class="sectionheader1"> INVESTMENTS</h6>
+<p class="sectionheader2"> PERFORMANCE </p>
 </div>
 
     <ul class="detailslist">
@@ -26,7 +29,7 @@
         <p class="detailsheader"> <%= hash[:name] %> </p>
         <p> <%= number_to_currency(hash[:portfolio_value]) %> </p>
         </div>
-        <p> <%= hash[:performance].round(2) %> % </p>
+        <p class="?"> <%= hash[:performance].round(2) %> % </p>
         <!-- | Portfolio share: <%= hash[:portfolio_share].round(2) %> % -->
 
       </li>
@@ -34,8 +37,8 @@
   </ul>
 
 <div class="sectionheader">
-<h5 class="sectionheader1"> Sectors </h5>
-<p> Portfolio share </p>
+<h6 class="sectionheader1"> SECTORS </h6>
+<p class="sectionheader2"> PORTFOLIO SHARE </p>
 </div>
 
   <ul class="detailslist">
@@ -52,8 +55,8 @@
 
 
 <div class="sectionheader">
-<h5 class="sectionheader1"> Assets </h5>
-<p> Portfolio share </p>
+<h6 class="sectionheader1"> ASSETS </h6>
+<p class="sectionheader2"> PORTFOLIO SHARE </p>
 </div>
 
   <ul class="detailslist">
@@ -61,15 +64,13 @@
       <li class="details">
         <div class="details2">
         <p class="detailsheader"> <%= hash[:name] %> </p>
-        <p> <%= hash[:portfolio_share].round(2) %> % </p>
-        </div>
         <p> <%= number_to_currency(hash[:portfolio_value]) %> </p>
+        </div>
+        <p> <%= hash[:portfolio_share].round(2) %> % </p>
       </li>
     <% end %>
   </ul>
 
-
-<%= link_to "[ < go back ]", portfolios_path %>
-<%= link_to "[ x remove portfolio ]", portfolio_path(@portfolio), method: :delete, data: {confirm: "Are you sure?"} %>
-
-
+<!-- button> <%= link_to "[ x remove portfolio ]", portfolio_path(@portfolio), method: :delete, data: {confirm: "Are you sure?"} %> </button>
+ -->
+</div>
