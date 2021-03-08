@@ -56,8 +56,8 @@ const initTvChart = () => {
   var chartElement = document.querySelector('#tv-chart');
 
   var chart = createChart(chartElement, {
-    width: 600,
-    height: 400,
+    width: 300,
+    height: 200,
    
     layout: {
       backgroundColor: '#E0E0E0',
