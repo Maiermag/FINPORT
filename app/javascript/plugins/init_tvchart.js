@@ -58,7 +58,7 @@ const initTvChart = () => {
   var chart = createChart(chartElement, {
     width: 600,
     height: 400,
-   
+  
     layout: {
       backgroundColor: '#E0E0E0',
       textColor: '#131B23',
