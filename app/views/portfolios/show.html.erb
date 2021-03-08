@@ -14,19 +14,19 @@
     <!-- <h4> Initial invest: <%= number_to_currency(@invest) %> </h4> -->
 </div>
 
-<div>
-<h5> Investments </h5>
-<p> Since start </p>
+<div class="sectionheader">
+<h5 class="sectionheader1"> Investments </h5>
+<p class="sectionheader1"> Performance </p>
 </div>
 
-    <ul>
+    <ul class="detailslist">
     <% @portfolio.assets_by_name.each do |hash| %>
-      <li>
-        <div>
-        <p> <%= hash[:name] %> </p>
-        <p> <%= hash[:performance].round(2) %> % </p>
-        </div>
+      <li class="details">
+        <div class="details2">
+        <p class="detailsheader"> <%= hash[:name] %> </p>
         <p> <%= number_to_currency(hash[:portfolio_value]) %> </p>
+        </div>
+        <p> <%= hash[:performance].round(2) %> % </p>
         <!-- | Portfolio share: <%= hash[:portfolio_share].round(2) %> % -->
 
       </li>

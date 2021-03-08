@@ -19,8 +19,9 @@
     <h1 class="finport">finport</h1>
     <% render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <%= render 'shared/bottommenu'  %>
-
+    <% unless current_page?("/") || params[:controller] =~ /^devise/ %>
+      <%= render 'shared/bottommenu'  %>
+    <% end  %>
     <%= yield %>
 
   </body>

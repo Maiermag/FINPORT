@@ -7,11 +7,14 @@ h1 {
 
 
 .dashboard-top {
+  display: flex;
+  justify-content: space-between;
 
 }
 
 .dashboard-box-1 {
-
+  // justify-content: space-between;
+  // width: 33%;
 }
 
 .dashboard-performance {
@@ -19,13 +22,40 @@ h1 {
 }
 
 .header {
-
+  margin: 0 0 0 0;
 }
 
 .value {
 
 }
 
-.performance {
+.sectionheader {
+  display: flex;
+  justify-content: space-between;
+}
 
+// .sectionheader1 {
+//   justify-content: space-between;
+//   width: 50%;
+// }
+
+.performance {
+    // width: 33%;
+}
+
+.detailslist {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.details2 {
+}
+
+.detailsheader {
+  margin: 0 0 0 0;
 }
