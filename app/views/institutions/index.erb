@@ -1,12 +1,15 @@
 <%= link_to "[< go back]", portfolios_path %>
 
-<h1> Manage Connections </h1>
+<div class="containertry">
+  <h1 class="manage" id="connectionsheader"> Manage Connections </h1>
 
-<p> Connect to a new financial institution </p>
 
-<%= simple_form_for(@portfolio) do |f| %>
-  <%= f.association :institution, collection: @institutions %>
-  <%= f.submit "Add Connection" %>
-<% end %>
+  <p > Connect to a new financial institution </p>
 
-<%= link_to "[ cancel ]", dashboard_path %>
+  <%= simple_form_for(@portfolio) do |f| %>
+    <%= f.association :institution, collection: @institutions %>
+    <%= f.submit "Add Connection", class: 'confirmbuttonpurple'%>
+  <% end %>
+</div>
+
+  <%= link_to "[ cancel ]", dashboard_path %>
