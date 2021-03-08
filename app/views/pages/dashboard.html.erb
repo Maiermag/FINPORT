@@ -1,3 +1,5 @@
+<div id="main">
+
 <%= link_to "[ < go back ]", portfolios_path %>
 
 <h1> Your Dashboard </h1>
@@ -5,6 +7,12 @@
 <h4> Your total investments: <%= number_to_currency(@initial_invest) %> </h4>
 <h4> Current portfolio value: <%= number_to_currency(@current_value) %> </h4>
 <h4> Performance: <%= @performance_in_percent %> % , <%= number_to_currency(@performance_in_eur)%> </h4>
+
+<div id="tv-chart" data-day="<%= @day_data.to_json %>" 
+                  data-week="<%= @week_data.to_json %>" 
+                  data-month="<%= @month_data.to_json %>" 
+                  data-year="<%= @year_data.to_json %>">
+</div>
 
 <h4> Your assets: </h4>
 
@@ -53,5 +61,5 @@
 
 <%= link_to "[ + add portfolio ]", institutions_path %>
 
-
+</div>
 

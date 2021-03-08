@@ -53,15 +53,15 @@ const initTvChart = () => {
   
   var switcherElement = createSimpleSwitcher(intervals, intervals[0], syncToInterval);
 
-  var chartElement = document.createElement('div');
+  var chartElement = document.querySelector('#tv-chart');
 
   var chart = createChart(chartElement, {
     width: 600,
     height: 400,
    
     layout: {
-      backgroundColor: '#000000',
-      textColor: '#d1d4dc',
+      backgroundColor: '#E0E0E0',
+      textColor: '#131B23',
     },
     grid: {
       vertLines: {
@@ -84,8 +84,8 @@ const initTvChart = () => {
     },
   });
 
-  document.body.appendChild(chartElement);
-  document.body.appendChild(switcherElement);
+  // document.body.appendChild(chartElement);
+  // document.body.appendChild(switcherElement);
 
   var areaSeries = null;
 
@@ -95,9 +95,9 @@ const initTvChart = () => {
       areaSeries = null;
     }
     areaSeries = chart.addAreaSeries({
-      topColor: 'rgba(76, 175, 80, 0.56)',
-      bottomColor: 'rgba(76, 175, 80, 0.04)',
-      lineColor: 'rgba(76, 175, 80, 1)',
+      topColor: 'rgba(98, 121, 184, 0.56)',
+      bottomColor: 'rgba(98, 121, 184, 0.04)',
+      lineColor: 'rgba(98, 121, 184, 1)',
       lineWidth: 2,
     });
     areaSeries.setData(seriesesData.get(interval));
@@ -107,3 +107,4 @@ const initTvChart = () => {
 };
 
 export { initTvChart };
+199, 109,126
