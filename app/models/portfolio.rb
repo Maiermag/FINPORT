@@ -101,7 +101,7 @@ class Portfolio < ApplicationRecord
         portfolio_share: ((current_value / total_current_portfolio_value) * 100),
       }
     end
-    hashes.sort{ |a,b| b[sort_key] <=> a[sort_key]}
+    hashes.sort { |a, b| b[sort_key] <=> a[sort_key] }
   end
 
   def chart_data
