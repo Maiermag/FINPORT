@@ -4,7 +4,7 @@
   <% current_user&.portfolios.each do |portfolio| %>
     <%= link_to "#{portfolio.institution.name}", portfolio_path(portfolio), class: 'side_button' %>
   <% end %>
-  <%= link_to 'Manage Connections', institutions_path, class: 'side_button line-height' %>
+  <%= link_to 'Manage Connections', portfolios_path, class: 'side_button line-height' %>
   <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item side_button" %>
 </div>
 
