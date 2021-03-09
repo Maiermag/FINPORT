@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 2021_03_03_155432) do
   end
 
   create_table "portfolios", force: :cascade do |t|
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.bigint "institution_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

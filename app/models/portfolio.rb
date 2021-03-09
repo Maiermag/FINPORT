@@ -104,45 +104,77 @@ class Portfolio < ApplicationRecord
     hashes.sort { |a, b| b[sort_key] <=> a[sort_key] }
   end
 
+  # >> NEW CHART DATA
+
+  def total_asset_value_on_date(date)
+    assets.includes(:past_pricings).sum { |asset| asset.value_at_date(date) }
+  end
+
   def chart_data
-    day_data = []
-    week_data = []
-    month_data = []
-    year_data = []
+    dates = PastPricing.all_dates
 
-    assets.first.past_pricings.order('date asc').each do |past_price|
-      if week_data.empty?
-        week_data << { time: past_price.date.strftime('%Y-%m-%d'), value: past_price.unit_price }
-      elsif week_data.last[:time].to_date <= past_price.date - 7.days
-        week_data << { time: past_price.date.strftime('%Y-%m-%d'), value: past_price.unit_price }
-      end
-
-      if month_data.empty?
-        month_data << { time: past_price.date.strftime('%Y-%m-%d'), value: past_price.unit_price }
-      elsif month_data.last[:time].to_date <= past_price.date - 30.days
-        month_data << { time: past_price.date.strftime('%Y-%m-%d'), value: past_price.unit_price }
-      end
-
-      if year_data.empty?
-        year_data << { time: past_price.date.strftime('%Y-%m-%d'), value: past_price.unit_price }
-      elsif year_data.last[:time].to_date <= past_price.date - 365.days
-        year_data << { time: past_price.date.strftime('%Y-%m-%d'), value: past_price.unit_price }
-      end
-
-      day_data << { time: past_price.date.strftime('%Y-%m-%d'), value: past_price.unit_price }
+    # year data
+    year_dates = dates.last(60)
+    year_data = year_dates.map do |date|
+      { time: date, value: total_asset_value_on_date(date) }
     end
 
-    day_data = day_data.first(150)
-    week_data = week_data.first(150)
-    month_data = month_data.first(150)
-    year_data = year_data.first(15)
+    # month data
+    month_data = year_data.last(30)
+    # week data
+    week_data = month_data.last(7)
 
     {
-      day: day_data,
+      day: [],
       week: week_data,
       month: month_data,
       year: year_data
     }
   end
+
+  # << NEW CHART DATA
+
+
+#   def chart_data
+
+#     day_data = []
+#     week_data = []
+#     month_data = []
+#     year_data = []
+
+#     assets.first.past_pricings.order('date asc').each do |past_price|
+#       if week_data.empty?
+#         week_data << { time: past_price.date.strftime('%Y-%m-%d'), value: past_price.unit_price }
+#       elsif week_data.last[:time].to_date <= past_price.date - 7.days
+#         week_data << { time: past_price.date.strftime('%Y-%m-%d'), value: past_price.unit_price }
+#       end
+
+#       if month_data.empty?
+#         month_data << { time: past_price.date.strftime('%Y-%m-%d'), value: past_price.unit_price }
+#       elsif month_data.last[:time].to_date <= past_price.date - 30.days
+#         month_data << { time: past_price.date.strftime('%Y-%m-%d'), value: past_price.unit_price }
+#       end
+
+#       if year_data.empty?
+#         year_data << { time: past_price.date.strftime('%Y-%m-%d'), value: past_price.unit_price }
+#       elsif year_data.last[:time].to_date <= past_price.date - 30.days
+#         year_data << { time: past_price.date.strftime('%Y-%m-%d'), value: past_price.unit_price }
+#       end
+
+#       day_data << { time: past_price.date.strftime('%Y-%m-%d'), value: past_price.unit_price }
+#     end
+
+#     day_data = day_data.first(150)
+#     week_data = week_data.first(150)
+#     month_data = month_data.first(150)
+#     year_data = year_data.first(15)
+
+#     {
+#       day: day_data,
+#       week: week_data,
+#       month: month_data,
+#       year: year_data
+#     }
+#   end
 
 end

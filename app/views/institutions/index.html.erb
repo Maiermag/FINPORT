@@ -1,0 +1,59 @@
+<div class="containertry">
+  <h1 class="manage" id="connectionsheader"> Manage Connections </h1>
+
+
+  <h3>Connect to a new financial institution</h3>
+
+  <% @institutions.each do |institution| %>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addNewConnectionModal">
+      <%= institution.name %> 
+
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="addNewConnectionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <%= simple_form_for Portfolio.new, :html=> { class: 'inputinstitutions' } do |f| %>
+        <div class="modal-dialog" role="document">
+          <div class="modal-content" id="modal-content">
+            
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">sign in to import your Portfolio from:</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+              <div>
+              <br>
+                <h2><%= institution.name %></h2>
+                <br>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Account number</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+              </div>
+            </div>
+
+            <div class="modal-footer containertry">
+              <%= f.hidden_field :institution_id, value: institution.id %>
+              <%= f.submit "Add Connection", class: 'confirm-login'%>
+            </div>
+            
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+  <% end %>
+</div>
+
+  
+
+
+

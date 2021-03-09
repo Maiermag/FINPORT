@@ -22,7 +22,7 @@ class PortfoliosController < ApplicationController
     @current_value = 0
     @assets.each do |asset|
       asset.acquisitions.each do |acquisition|
-        @current_value += (asset.current_unit_price * acquisition.units_bought)
+        @current_value += (asset.past_pricings.order(date: :desc).first.unit_price * acquisition.units_bought)
       end
     end
 
@@ -30,7 +30,25 @@ class PortfoliosController < ApplicationController
     @performance_percent = (((@current_value / @invest) * 100) - 100).round(2)
     @performance_eur = (@current_value - @invest).round(2)
 
+    #chart data
+
+    # chart
+    @chart_data = @portfolio.chart_data
+    @day_data = @chart_data[:day]
+    @week_data = @chart_data[:week]
+    @month_data = @chart_data[:month]
+    @year_data = @chart_data[:year]
+
   end
+
+  # # portfolio value over time
+  #   @past_value = 0
+  #   @assets.each do |asset|
+  #     asset.acquisitions.each do |acquisition|
+  #       @past_value += (asset.current_unit_price * acquisition.units_bought)
+  #     end
+  #   end
+
 
   def create
     @institution = Institution.find(params[:portfolio][:institution_id])
