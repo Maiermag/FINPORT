@@ -9,7 +9,7 @@
     </div>
     <div>
       <p class="header"> PERFORMANCE </p>
-      <p class="value"> <%= number_to_currency(@performance_in_eur)%> </p>
+      <p class="value pos-neg"> <%= number_to_currency(@performance_in_eur)%> </p>
     </div>
     <p class="performance pos-neg"> <%= @performance_in_percent %> % </p>
     <!-- <p> Your total investments: <%= number_to_currency(@initial_invest) %> </p> -->
@@ -49,12 +49,17 @@
 
   <ul class="detailslist">
     <% current_user.industries_by_name.each do |hash| %>
-      <li class="details">
+      <li>
+        <dl class="percentage">
+          <dd> <span class="text"> <% hash[:portfolio_share].round(2) %> </span> </dd>
+        </dl>
+        <div class="details">
         <div class="details2">
           <p class="detailsheader"> <%= hash[:name] %> </p>
           <p> <%= number_to_currency(hash[:portfolio_value]) %> </p>
         </div>
           <p> <%= hash[:portfolio_share].round(2) %> % </p>
+        </div>
       </li>
     <% end %>
   </ul>
