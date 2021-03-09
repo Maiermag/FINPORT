@@ -236,10 +236,7 @@ acquisition_assetFaker = Acquisition.create(asset: assetFaker, date_bought: "202
 acquisition_assetFaker_2 = Acquisition.create(asset: assetFaker, date_bought: "2020-09-04 00:00:00" , units_bought: 150, unit_price_bought: 30)
 
 1000.times do |count|
-<<<<<<< HEAD
-=======
 
->>>>>>> master
 p PastPricing.create!(date: (DateTime.now - count * 1.day), unit_price: rand(40..60), asset: assetFaker)
 end
 
@@ -249,10 +246,7 @@ assetFaker2 = Asset.create!(portfolio: portfolioFaker2, asset_name: "Ethereum", 
 acquisition_assetFaker = Acquisition.create(asset: assetFaker2, date_bought: "2020-03-04 00:00:00" , units_bought: 200, unit_price_bought: 20)
 acquisition_assetFaker_2 = Acquisition.create(asset: assetFaker2, date_bought: "2020-09-04 00:00:00" , units_bought: 150, unit_price_bought: 30 )
 
-<<<<<<< HEAD
 1000.times do |count|
 p PastPricing.create!(date: (DateTime.now - count * 1.day), unit_price: rand(40..60), asset: assetFaker2)
-=======
-# user1 test seed for more data
->>>>>>> master
+
 end

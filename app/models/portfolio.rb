@@ -125,7 +125,7 @@ class Portfolio < ApplicationRecord
 
       if year_data.empty?
         year_data << { time: past_price.date.strftime('%Y-%m-%d'), value: past_price.unit_price }
-      elsif year_data.last[:time].to_date <= past_price.date - 365.days
+      elsif year_data.last[:time].to_date <= past_price.date - 30.days
         year_data << { time: past_price.date.strftime('%Y-%m-%d'), value: past_price.unit_price }
       end
 

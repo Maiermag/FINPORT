@@ -15,7 +15,7 @@ class Asset < ApplicationRecord
   #per asset:
   def total_invested_value
     acquisitions.sum do |acquisition|
-       acquisition.unit_price_bought * acquisition.units_bought
+      acquisition.unit_price_bought * acquisition.units_bought
     end
   end
 end
