@@ -19,6 +19,34 @@ class User < ApplicationRecord
     end
   end
 
+  def total_asset_value_on_date(date)
+    assets.includes(:past_pricings).sum { |asset| asset.value_at_date(date) }
+  end
+
+  def chart_data
+   
+
+    dates = PastPricing.all_dates
+
+    # year data
+    year_dates = dates.last(60)
+    year_data = year_dates.map do |date|
+      { time: date, value: total_asset_value_on_date(date) }
+    end
+
+    # month data
+    month_data = year_data.last(30)
+    # week data
+    week_data = month_data.last(7)
+    
+    {
+      day: [],
+      week: week_data,
+      month: month_data,
+      year: year_data
+    }
+  end
+
   def asset_names
     assets.pluck(:asset_name).sort
   end
