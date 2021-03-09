@@ -248,5 +248,4 @@ acquisition_assetFaker_2 = Acquisition.create(asset: assetFaker2, date_bought: "
 
 1000.times do |count|
 p PastPricing.create!(date: (DateTime.now - count * 1.day), unit_price: rand(40..60), asset: assetFaker2)
-# user1 test seed for more data
 end

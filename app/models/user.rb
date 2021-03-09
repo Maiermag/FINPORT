@@ -24,8 +24,6 @@ class User < ApplicationRecord
   end
 
   def chart_data
-   
-
     dates = PastPricing.all_dates
 
     # year data
@@ -38,7 +36,7 @@ class User < ApplicationRecord
     month_data = year_data.last(30)
     # week data
     week_data = month_data.last(7)
-    
+
     {
       day: [],
       week: week_data,
