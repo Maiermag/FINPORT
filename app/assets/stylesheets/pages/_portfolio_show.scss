@@ -4,6 +4,7 @@
 
 p {
   margin: 0 0 0 0;
+  padding: 0 0 5px 0;
 }
 
 h1 {
@@ -58,6 +59,7 @@ h1 {
   font-weight: 400;
   color: #969696;
   margin: 0px 0px 8px 0px;
+  padding-top: 15px;
 }
 
 .sectionheader2 {
@@ -94,7 +96,7 @@ h1 {
   margin: 0 0 0 0;
   font-size: 15px;
   font-weight: 500;
-  padding: 0 0 0 0;
+  padding: 5px 0 0 0;
 }
 
 .performancedev-neg {
@@ -138,6 +140,7 @@ h1 {
     content: "";
     display: block;
     background-color: #0077b6;
+    opacity: 0.8;
     // width: 90%;
     margin: 0 0 0 0;
     height: 90%;
