@@ -105,6 +105,7 @@ class Portfolio < ApplicationRecord
   end
 
   def chart_data
+    
     day_data = []
     week_data = []
     month_data = []

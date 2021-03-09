@@ -20,7 +20,7 @@ class PortfoliosController < ApplicationController
 
     # current portfolio value
     @current_value = 0
-    @assets.each do |asset|
+    @ass  ets.each do |asset|
       asset.acquisitions.each do |acquisition|
         @current_value += (asset.current_unit_price * acquisition.units_bought)
       end
@@ -31,6 +31,15 @@ class PortfoliosController < ApplicationController
     @performance_eur = (@current_value - @invest).round(2)
 
   end
+
+  # # portfolio value over time
+  #   @past_value = 0
+  #   @assets.each do |asset|
+  #     asset.acquisitions.each do |acquisition|
+  #       @past_value += (asset.current_unit_price * acquisition.units_bought)
+  #     end
+  #   end
+     
 
   def create
     @institution = Institution.find(params[:portfolio][:institution_id])

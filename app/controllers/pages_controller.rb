@@ -28,7 +28,7 @@ class PagesController < ApplicationController
     @performance_in_eur = (@current_value - @initial_invest).round(2)
     
     # chart 
-    @chart_data = Portfolio.last.chart_data
+    @chart_data = current_user.chart_data
     @day_data = @chart_data[:day]
     @week_data = @chart_data[:week]
     @month_data = @chart_data[:month]
