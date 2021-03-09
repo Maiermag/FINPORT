@@ -1,1 +1,43 @@
 // Specific CSS for your home-page
+
+.login {
+  text-align: right;
+  padding-top: 20px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+.topbox {
+  width: 50%;
+  text-align: right;
+}
+
+.value-proposition {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-weight: bold;
+}
+
+.value-proposition-1 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.img {
+}
+
+.icon {
+  font-size: 25px;
+}
+
+.three {
+  text-align: left;
+}
