@@ -1,0 +1,35 @@
+#modal-content {
+  border-radius: 15px;
+}
+
+.modal-header {
+  position: relative;
+}
+
+// .modal-footer {
+//   width: 80%;
+//   margin: 0 auto;
+//   text-align: center,
+// }
+
+.confirm-login {
+  margin: 0 auto;
+  border-radius: 4.5px;
+  //background-color: rgba(126,107,143, 0.9);
+  background-color: rgba(13,12,29, 0.9);
+  color: #F5F5F4;
+  width: 210px;
+  height: 33px;
+  letter-spacing: 2.4px;
+  font-weight: 200;
+  font-family: poppins;
+  border: 0;
+  //border: 1px solid rgba(13,12,29, 0.6);
+  box-shadow: 3px 3px 3px rgba(13,12,29,0.1);
+}
+
+.close {
+  position: fixed;
+  right: 15px;
+  top: 64px;
+}
