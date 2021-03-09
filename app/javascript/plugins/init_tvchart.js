@@ -102,7 +102,7 @@ const initTvChart = () => {
     });
     areaSeries.setData(seriesesData.get(interval));
   }
-
+  
   syncToInterval(intervals[0]);
 };
 
