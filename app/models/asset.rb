@@ -18,4 +18,13 @@ class Asset < ApplicationRecord
       acquisition.unit_price_bought * acquisition.units_bought
     end
   end
+
+  def value_at_date(date)
+    past_pricing = past_pricings.where("date_trunc('day', date)::date = ?", date).first
+    # past_pricing = past_pricings.find_by(date: date)
+    
+    price = past_pricing.nil? ? 0 : past_pricing.unit_price
+    total_units_bought * price
+  end
 end
+   
