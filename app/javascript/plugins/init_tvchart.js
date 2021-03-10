@@ -70,9 +70,12 @@ const initTvChart = () => {
         color: '#FBFBFB',
       },
     },
-    rightPriceScale: {
-      borderVisible: false,
-    },
+    rightPriceScale:{
+        borderVisible: false,
+        entireTextOnly: true,
+        // mode: 4,
+      },
+
     timeScale: {
       borderVisible: false,
     },
