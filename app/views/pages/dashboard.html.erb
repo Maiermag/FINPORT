@@ -23,6 +23,7 @@
                     data-year="<%= @year_data.to_json %>">
   </div>
 </div>
+
 </div>
 <div class="backgrounddiv2" id="backdash">
   <div class="main" id="maindashboard">
@@ -31,23 +32,34 @@
     <p class="sectionheader1"> PERFORMANCE </p>
     </div>
 
-        <ul class="detailslist">
-        <% current_user.assets_by_name.each do |hash| %>
-          <li class="details">
-            <div class="details2">
+
+    <ul class="detailslist">
+    <% current_user.assets_by_name.each do |hash| %>
+
+      <li class="details">
+         <div class="d-flex align-items-center">
+          <% if hash[:name] == "Bitcoin" %>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><g fill="none" fill-rule="evenodd"><circle cx="16" cy="16" r="12" fill="#F7931A"/><path fill="#FFF" fill-rule="nonzero" d="M23.189 14.02c.314-2.096-1.283-3.223-3.465-3.975l.708-2.84-1.728-.43-.69 2.765c-.454-.114-.92-.22-1.385-.326l.695-2.783L15.596 6l-.708 2.839c-.376-.086-.746-.17-1.104-.26l.002-.009-2.384-.595-.46 1.846s1.283.294 1.256.312c.7.175.826.638.805 1.006l-.806 3.235c.048.012.11.03.18.057l-.183-.045-1.13 4.532c-.086.212-.303.531-.793.41.018.025-1.256-.313-1.256-.313l-.858 1.978 2.25.561c.418.105.828.215 1.231.318l-.715 2.872 1.727.43.708-2.84c.472.127.93.245 1.378.357l-.706 2.828 1.728.43.715-2.866c2.948.558 5.164.333 6.097-2.333.752-2.146-.037-3.385-1.588-4.192 1.13-.26 1.98-1.003 2.207-2.538zm-3.95 5.538c-.533 2.147-4.148.986-5.32.695l.95-3.805c1.172.293 4.929.872 4.37 3.11zm.535-5.569c-.487 1.953-3.495.96-4.47.717l.86-3.45c.975.243 4.118.696 3.61 2.733z"/></g></svg>
+            <% elsif hash[:name] == "Ethereum" %>
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32"><defs><linearGradient id="c" x1="50%" x2="50%" y1="0%" y2="100%"><stop offset="0%" stop-color="#FFF" stop-opacity=".5"/><stop offset="100%" stop-opacity=".5"/></linearGradient><circle id="b" cx="16" cy="15" r="12"/><filter id="a" width="111.7%" height="111.7%" x="-5.8%" y="-4.2%" filterUnits="objectBoundingBox"><feOffset dy=".5" in="SourceAlpha" result="shadowOffsetOuter1"/><feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation=".5"/><feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"/><feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.199473505 0"/></filter><path id="e" d="M16.498 20.968L24 16.616l-7.502 10.379L9 16.615l7.498 4.351zm0-17.968l7.497 12.22-7.497 4.353L9 15.22 16.498 3z"/><filter id="d" width="123.3%" height="114.6%" x="-11.7%" y="-5.2%" filterUnits="objectBoundingBox"><feOffset dy=".5" in="SourceAlpha" result="shadowOffsetOuter1"/><feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation=".5"/><feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"/><feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.204257246 0"/></filter></defs><g fill="none" fill-rule="evenodd"><use fill="#000" filter="url(#a)" xlink:href="#b"/><use fill="#627EEA" xlink:href="#b"/><use fill="url(#c)" style="mix-blend-mode:soft-light" xlink:href="#b"/><circle cx="16" cy="15" r="14.5" stroke="#000" stroke-opacity=".097"/><g fill-rule="nonzero"><use fill="#000" filter="url(#d)" xlink:href="#e"/><use fill="#FFF" fill-opacity="0" fill-rule="evenodd" xlink:href="#e"/></g><g fill="#FFF" fill-rule="nonzero"><path fill-opacity=".602" d="M16.498 3v8.87l7.497 3.35z"/><path d="M16.498 3L9 15.22l7.498-3.35z"/><path fill-opacity=".602" d="M16.498 20.968v6.027L24 16.616z"/><path d="M16.498 26.995v-6.028L9 16.616z"/><path fill-opacity=".2" d="M16.498 19.573l7.497-4.353-7.497-3.348z"/><path fill-opacity=".602" d="M9 15.22l7.498 4.353v-7.701z"/></g></g></svg>
+            <% elsif hash[:name] == "Polkadot" %>
+            <svg height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 800 800" width="32" xmlns="http://www.w3.org/2000/svg"><g transform="matrix(.1 0 0 -.1 0 800)"><path d="m3821 6359c-293-33-602-147-831-308-622-433-900-1189-710-1926 16-63 38-132 49-153 71-138 263-176 381-74 83 70 108 170 71 288-42 140-53 202-58 350-4 118-2 175 12 255 88 527 489 941 1018 1050 132 27 342 29 472 5 272-52 481-162 676-356 201-199 319-425 364-700 25-144 16-365-19-505-119-479-501-850-978-950-40-9-158-22-263-30-171-14-375-38-431-51-12-3-25-1-28 4-7 12 22 156 164 807 86 392 110 521 106 557-18 170-201 269-354 192-57-28-101-75-120-126-25-72-574-2656-574-2708-3-215 258-329 412-179 23 22 48 55 55 73 8 19 34 127 59 242 54 251 55 253 97 340 24 49 57 92 114 149 139 140 235 174 555 200 107 9 239 25 293 36 640 130 1162 605 1351 1233 58 191 71 285 70 521 0 188-3 223-27 336-98 465-352 851-737 1121-190 133-473 248-708 289-137 23-361 32-481 18z"/><circle id="b" cx="16" cy="15" r="12"/><path d="m3997 2270c-172-43-269-223-211-393 22-64 91-139 156-168s181-32 241-5c51 22 123 90 150 141 32 58 32 212 0 270-63 117-212 186-336 155z"/></g></svg>
+          <% end %>
+          <div class="details2">
             <p class="detailsheader"> <%= hash[:name] %> </p>
             <p> <%= number_to_currency(hash[:portfolio_value]) %> </p>
-            </div>
-            <p class="pos-neg"> <%= hash[:performance].round(2) %> % </p>
-            <!-- | Portfolio share: <%= hash[:portfolio_share].round(2) %> % -->
-          </li>
-        <% end %>
-      </ul>
-    </div>
+          </div>
+        </div>
+        <p class="pos-neg"> <%= hash[:performance].round(2) %> % </p>
+        <!-- | Portfolio share: <%= hash[:portfolio_share].round(2) %> % -->
+      </li>
+    <% end %>
+  </ul>
 </div>
+  </div>
 <div class="main" id="bottomid">
 <div class="sectionheader">
-  <h6 class="sectionheader1"> SECTORS </h6>
+  <p class="sectionheader1"> SECTORS </p>
   <p class="sectionheader1"> PORTFOLIO SHARE </p>
 </div>
 
@@ -65,7 +77,7 @@
   </ul>
 
 <div class="sectionheader">
-<h6 class="sectionheader1"> ASSET CLASSES </h6>
+<p class="sectionheader1"> ASSET CLASSES </p>
 <p class="sectionheader1"> PORTFOLIO SHARE </p>
 </div>
 

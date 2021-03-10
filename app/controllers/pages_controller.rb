@@ -24,10 +24,14 @@ class PagesController < ApplicationController
 
     # performance
 
-    @performance_in_percent = (((@current_value / @initial_invest) * 100) -100).round(2)
+    if @initial_invest.zero?
+      @performance_in_percent = 0
+    else
+      @performance_in_percent = (((@current_value / @initial_invest) * 100) -100).round(2)
+    end
     @performance_in_eur = (@current_value - @initial_invest).round(2)
-    
-    # chart 
+
+    # chart
     @chart_data = current_user.chart_data
     @day_data = @chart_data[:day]
     @week_data = @chart_data[:week]
@@ -58,7 +62,7 @@ class PagesController < ApplicationController
   def chart_playground
     # client =  Alpaca::Trade::Api::Client.new
     # p client.account
-    # url = 'https://paper-api.alpaca.markets/v2/account/portfolio/history'
+    # url = 'https://data.alpaca.markets/v2'
     # headers = {
     #   "APCA-API-KEY-ID" => ENV['ALPACA_API_KEY_ID'],
     #   "APCA-API-SECRET-KEY" => ENV['ALPACA_API_SECRET_KEY'],
