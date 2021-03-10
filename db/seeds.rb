@@ -244,7 +244,7 @@ end
 
 institutionFaker2 = Institution.create!(name: "Faker2")
 portfolioFaker2 = Portfolio.create!(user: user1, institution: institutionFaker2)
-assetFaker2 = Asset.create!(portfolio: portfolioFaker2, asset_name: "Ethereum", current_unit_price: 40, asset_category: "cryptocurrency", industry: industries["cryptocurrency"])
+assetFaker2 = Asset.create!(portfolio: portfolioFaker2, asset_name: "Ethereum", current_unit_price: 40, asset_category: "Crypto-food", industry: industries["cryptocurrency"])
 acquisition_assetFaker = Acquisition.create(asset: assetFaker2, date_bought: "2020-03-04 00:00:00" , units_bought: 200, unit_price_bought: 20)
 acquisition_assetFaker_2 = Acquisition.create(asset: assetFaker2, date_bought: "2020-09-04 00:00:00" , units_bought: 150, unit_price_bought: 30 )
 

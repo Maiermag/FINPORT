@@ -55,8 +55,7 @@
           <p class="detailsheader"> <%= hash[:name] %> </p>
           <p> <%= hash[:portfolio_share].round(2) %> % </p>
         </div>
-          <dl class="percentage">
-            <dd> <span class="text"> <% hash[:portfolio_share].round(2) %> </span> </dd>
+          <dl class="percentage percentage-<%= hash[:portfolio_share].round(0) %>">
           </dl>
           <p> <%= number_to_currency(hash[:portfolio_value]) %> </p>
       </li>
@@ -76,8 +75,7 @@
           <p class="detailsheader"> <%= hash[:name] %> </p>
           <p> <%= hash[:portfolio_share].round(2) %> % </p>
         </div>
-        <dl class="percentage">
-          <dd> <span class="text"> <% hash[:portfolio_share].round(2) %> </span> </dd>
+        <dl class="percentage percentage-<%= hash[:portfolio_share].round(0) %>">
         </dl>
         <p> <%= number_to_currency(hash[:portfolio_value]) %> </p>
       </li>
