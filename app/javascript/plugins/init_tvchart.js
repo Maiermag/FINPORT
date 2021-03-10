@@ -34,10 +34,10 @@ const initTvChart = () => {
     return switcherElement;
   }
 
-  var intervals = ['1D', '1W', '1M', '1Y'];
+  var intervals = ['Week', 'Month', 'Year'];
 
 
-  var dayData = JSON.parse(document.querySelector('#tv-chart').dataset.day);
+  // var dayData = JSON.parse(document.querySelector('#tv-chart').dataset.day);
   var weekData = JSON.parse(document.querySelector('#tv-chart').dataset.week);
   var monthData = JSON.parse(document.querySelector('#tv-chart').dataset.month);
   var yearData = JSON.parse(document.querySelector('#tv-chart').dataset.year);
@@ -45,10 +45,9 @@ const initTvChart = () => {
 
 
   var seriesesData = new Map([
-    ['1D', dayData ],
-    ['1W', weekData ],
-    ['1M', monthData ],
-    ['1Y', yearData ],
+    ['Week', weekData ],
+    ['Month', monthData ],
+    ['Year', yearData ],
   ]);
 
   var switcherElement = createSimpleSwitcher(intervals, intervals[0], syncToInterval);
@@ -56,27 +55,34 @@ const initTvChart = () => {
   var chartElement = document.querySelector('#tv-chart');
 
   var chart = createChart(chartElement, {
-    width: 300,
-    height: 200,
+    width: 345,
+    height: 260,
 
     layout: {
-      backgroundColor: '#E0E0E0',
-      textColor: '#131B23',
+      backgroundColor: '#fbfbfb',
+      textColor: '#536369',
     },
     grid: {
       vertLines: {
         visible: false,
       },
       horzLines: {
-        color: 'rgba(42, 46, 57, 0.5)',
+        color: '#FBFBFB',
       },
     },
-    rightPriceScale: {
-      borderVisible: false,
-    },
+    rightPriceScale:{
+        borderVisible: false,
+        entireTextOnly: true,
+        // mode: 4,
+      },
+
     timeScale: {
       borderVisible: false,
       
+    },
+    localization: {
+      dateFormat: 'dd/MM/yy',
+      locale: 'en-DE',
     },
     crosshair: {
       horzLine: {

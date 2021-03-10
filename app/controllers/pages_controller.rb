@@ -24,10 +24,14 @@ class PagesController < ApplicationController
 
     # performance
 
-    @performance_in_percent = (((@current_value / @initial_invest) * 100) -100).round(2)
+    if @initial_invest.zero?
+      @performance_in_percent = 0
+    else
+      @performance_in_percent = (((@current_value / @initial_invest) * 100) -100).round(2)
+    end
     @performance_in_eur = (@current_value - @initial_invest).round(2)
-    
-    # chart 
+
+    # chart
     @chart_data = current_user.chart_data
     @day_data = @chart_data[:day]
     @week_data = @chart_data[:week]
