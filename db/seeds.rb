@@ -52,11 +52,11 @@ institution22 = Institution.create!(name: "")
 
 # first seed with Trade Republic
 user1 = User.create!(first_name: "Jonas", last_name: "Mikael", email: "jonas@example.com", password: "123456")
-# institution1 = Institution.create!(name: "TradeRepublic")
-# portfolio1 = Portfolio.create!(user: user1, institution: institution1)
-# asset1 = Asset.create!(portfolio: portfolio1, asset_name: "Hello Fresh", current_unit_price: 63.85, asset_category: "stocks", industry: industries["food"])
-# acquisition_asset1 = Acquisition.create(asset: asset1, date_bought: "2021-02-15 13:24:20" , units_bought: 10, unit_price_bought: 65.23)
-# past_pricings_asset1_1 = PastPricing.create!(date: "2021-02-15 13:24:20", unit_price: 63.20, asset: asset1)
+institution1 = Institution.create!(name: "TradeRepublic")
+portfolio1 = Portfolio.create!(institution: institution1)
+asset1 = Asset.create!(portfolio: portfolio1, asset_name: "Hello Fresh", current_unit_price: 63.85, asset_category: "stocks", industry: industries["food"])
+acquisition_asset1 = Acquisition.create(asset: asset1, date_bought: "2021-02-15 13:24:20" , units_bought: 10, unit_price_bought: 65.23)
+past_pricings_asset1_1 = PastPricing.create!(date: "2021-02-15 13:24:20", unit_price: 63.20, asset: asset1)
 # past_pricings_asset1_2 = PastPricing.create!(date: "2021-02-16 13:24:20", unit_price: 64.20, asset: asset1)
 # past_pricings_asset1_3 = PastPricing.create!(date: "2021-02-17 13:24:20", unit_price: 65.20, asset: asset1)
 # past_pricings_asset1_4 = PastPricing.create!(date: "2021-02-18 13:24:20", unit_price: 65.20, asset: asset1)
@@ -237,12 +237,14 @@ acquisition_assetFaker_2 = Acquisition.create(asset: assetFaker, date_bought: "2
 
 1000.times do |count|
 
+
+
 p PastPricing.create!(date: (DateTime.now - count * 1.day), unit_price: rand(40..60), asset: assetFaker)
 end
 
 institutionFaker2 = Institution.create!(name: "Faker2")
 portfolioFaker2 = Portfolio.create!(user: user1, institution: institutionFaker2)
-assetFaker2 = Asset.create!(portfolio: portfolioFaker2, asset_name: "Ethereum", current_unit_price: 40, asset_category: "cryptocurrency", industry: industries["cryptocurrency"])
+assetFaker2 = Asset.create!(portfolio: portfolioFaker2, asset_name: "Ethereum", current_unit_price: 40, asset_category: "Crypto-food", industry: industries["cryptocurrency"])
 acquisition_assetFaker = Acquisition.create(asset: assetFaker2, date_bought: "2020-03-04 00:00:00" , units_bought: 200, unit_price_bought: 20)
 acquisition_assetFaker_2 = Acquisition.create(asset: assetFaker2, date_bought: "2020-09-04 00:00:00" , units_bought: 150, unit_price_bought: 30 )
 

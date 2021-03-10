@@ -10,7 +10,7 @@
   </div>
   <div class="dashboard-box-1">
     <p class="header"> PERFORMANCE </p>
-    <p class="value"> <%= number_to_currency(@performance_eur) %> </p>
+    <p class="value pos-neg"> <%= number_to_currency(@performance_eur) %> </p>
   </div class="dashboard-performance">
     <p class="performance pos-neg"> <%= @performance_percent %> % </p>
     <!-- <h4> Initial invest: <%= number_to_currency(@invest) %> </h4> -->
@@ -26,10 +26,10 @@
 
 <div class="sectionheader">
   <h6 class="sectionheader1">INVESTMENTS</h6>
-  <p class="sectionheader2">PERFORMANCE</p>
+  <p class="sectionheader1">PERFORMANCE</p>
 </div>
 
-    <ul class="detailslist">
+  <ul class="detailslist">
     <% @portfolio.assets_by_name.each do |hash| %>
       <li class="details">
         <div class="details2">
@@ -45,17 +45,19 @@
 
 <div class="sectionheader">
 <h6 class="sectionheader1"> SECTORS </h6>
-<p class="sectionheader2"> PORTFOLIO SHARE </p>
+<p class="sectionheader1"> PORTFOLIO SHARE </p>
 </div>
 
   <ul class="detailslist">
     <% @portfolio.industries_by_name.each do |hash| %>
-      <li class="details">
-        <div class="details2">
+      <li>
+        <div class="details">
           <p class="detailsheader"> <%= hash[:name] %> </p>
-          <p> <%= number_to_currency(hash[:portfolio_value]) %> </p>
-        </div>
           <p> <%= hash[:portfolio_share].round(2) %> % </p>
+        </div>
+          <dl class="percentage percentage-<%= hash[:portfolio_share].round(0) %>">
+          </dl>
+          <p> <%= number_to_currency(hash[:portfolio_value]) %> </p>
       </li>
     <% end %>
   </ul>
@@ -63,17 +65,19 @@
 
 <div class="sectionheader">
 <h6 class="sectionheader1"> ASSET CLASSES </h6>
-<p class="sectionheader2"> PORTFOLIO SHARE </p>
+<p class="sectionheader1"> PORTFOLIO SHARE </p>
 </div>
 
   <ul class="detailslist">
     <% @portfolio.categories_by_name.each do |hash| %>
-      <li class="details">
-        <div class="details2">
-        <p class="detailsheader"> <%= hash[:name] %> </p>
-        <p> <%= number_to_currency(hash[:portfolio_value]) %> </p>
+      <li>
+        <div class="details">
+          <p class="detailsheader"> <%= hash[:name] %> </p>
+          <p> <%= hash[:portfolio_share].round(2) %> % </p>
         </div>
-        <p> <%= hash[:portfolio_share].round(2) %> % </p>
+        <dl class="percentage percentage-<%= hash[:portfolio_share].round(0) %>">
+        </dl>
+        <p> <%= number_to_currency(hash[:portfolio_value]) %> </p>
       </li>
     <% end %>
   </ul>
