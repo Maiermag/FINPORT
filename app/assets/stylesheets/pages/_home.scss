@@ -1,8 +1,17 @@
 // Specific CSS for your home-page
-
+.containersecond {
+  width: 90%;
+  margin: 0 auto;
+}
 .login {
-  text-align: right;
-  padding-top: 20px;
+  //margin: 45px 6px 24px 0px;
+  //font-size: 15px;
+  //display: flex;
+  //justify-content: space-between;
+}
+
+#bottomid {
+  margin-bottom:60px;
 }
 
 .top {
@@ -10,28 +19,147 @@
   justify-content: space-between;
   padding-top: 20px;
   padding-bottom: 30px;
+  margin-bottom: 20px;
+  }
+
+.backrounddiv {
+  background-color: rgba(164, 184, 196, 0.3);
+  margin-top: 45px;
+  margin-bottom: 18px;
+  padding: 21px 0px 3px 0px;
+}
+
+#homelogin {
+  margin-top: -9px;
+  margin-bottom: 9px;
+}
+
+#startedhome{
+  margin-top: 15px;
+}
+
+#maindashboard{
+  padding-top: 0px;
+  padding-bottom: 0.1px;
+  padding-left: 4.5px;
+  padding-right: 4.5px;
+  background-color: rgba(164, 184, 196, 0.09);
+}
+
+#idtop {
+  padding-top: 21px;
+}
+
+.backgrounddiv2 {
+  //background-color: rgba(230, 149, 151,0.18);
+  //background-color: rgba(164, 184, 196, 0.3);
+  //background-color: rgba(206, 236, 151,0.3);
+  //background-color: rgba(232, 225, 155, 0.21);
+  background-color: rgba(164, 184, 196, 0.18);
+  padding-top: 15px;
+  margin-top:21px;
+}
+
+
+
+#backdash {
+  padding-top: 0px;
+  padding-bottom:0.1px;
+  margin-bottom: -39px;
+}
+
+#backdashend {
+  padding-top: 0px;
+  padding-bottom:0.1px;
+  margin-bottom: 39px;
+  margin-top: -36px;
+}
+
+.bottomreference{
+  // padding: 12px 0px 6px 0px;
+  opacity: 0.9;
+  letter-spacing: 0.9px;
 }
 
 .topbox {
   width: 50%;
-  text-align: right;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  padding-left:12px;
+}
+
+.getstarted {
+  display: inline-block;
+  width: 80%;
+}
+
+.topboxthree {
+  width: 45%;
+  text-align: center;
+  padding-top: 12px;
+}
+.topspace {
+  width: 50%;
+}
+.homestats {
+  font-family:poppins;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  font-size: 15px;
+  padding: 15px 0px;
+  border-bottom: 1px solid rgba(126,107,143, 0.6);
+}
+
+.bottom {
+  width: 45%;
+}
+#tryhome{
+  width: 80%;
+  background-color: rgba(126,107,143, 0.8);
+  color: white;
+  font-weight: 300;
+
 }
 
 .value-proposition {
   text-align: center;
   padding-top: 20px;
-  padding-bottom: 20px;
   padding-right: 10px;
   padding-left: 10px;
   font-weight: bold;
-}
+  margin-top:12px;
+  }
+
+  .backgrounddiv3 {
+    text-align: center;
+    background-color: rgba(164, 184, 196, 0.15);
+  }
 
 .value-proposition-1 {
   padding-top: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 0px;
+  background-color: rgba(164, 184, 196, 0.09);
 }
 
-.img {
+.value-proposition-2 {
+  padding-top: 10px;
+  padding-bottom: 0px;
+  text-align: center;
+}
+
+#firstproposition{
+  border-top: 1px solid rgba(126,107,143, 0.6);
+  padding-top:18px;
+  margin-top: 18px;
+}
+
+#centerproposition {
+
+}
+
+img {
+  width: 100%;
 }
 
 .icon {
@@ -40,4 +168,16 @@
 
 .three {
   text-align: left;
+}
+
+.fa-anchor {
+  font-size: 24px;
+  }
+
+.fa-handshake {
+  font-size: 24px;
+}
+
+.fa-battle-net{
+  font-size: 27px;
 }

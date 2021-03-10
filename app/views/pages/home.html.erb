@@ -1,41 +1,79 @@
+<div class="containersecond">
 
-<div class="login">
-<% if user_signed_in?  %>
-  <%= link_to "Dashboard", dashboard_path, class: "nav-link" %>
-<% else %>
-  <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-<% end %>
 </div>
-
-<div class="top">
-  <div class="topbox">
-  <p> Integrate all your investments across brokers and banks in one place </p>
-  <p> <b>Get started</b></p>
-  </div class="topbox two">
-  <img src="finport_homepage_picture1.jpg" alt="i-phone">
-</div>
-
-<div class="value-proposition">
-  <div class="value-proposition-1">
-  <p class="icon"> 📈 </p>
-  <p> Transparency and optimization <br> in one place </p>
+<div class="backrounddiv">
+<div class="containersecond">
+  <div class="top">
+    <div class="topspace">
+      <%= image_tag("finport_homepage_picture1.jpg")%>
   </div>
-  <div class="value-proposition-1">
-  <p class="icon"> 🤝 </p>
-  <p> Thousands of partner integrations <br> via Api connections </p>
-  </div>
-  <div class="value-proposition-1">
-  <p class="icon"> ✨ </p>
-  <p> User-friendly, <br> easy to use platform </p>
+    <div class="topbox">
+    <p> Integrate all your investments across brokers and banks in one place </p>
   </div>
 </div>
+</div>
 
-<div class="top">
-    <img src="finport_homepage_picture1.jpg" alt="i-phone">
-  <div class="topbox three">
-    <p> Analyze your investments by asset class, sectors, and many more. </p>
-    <p> <b>Try now</b> </p>
+<div class="containersecond">
+    </div class="topbox two">
+    </div>
+  <div class="containertry">
+   <button class="confirmbutton" id="startedhome">Get started</button>
+   <div class="login">
+  <% if user_signed_in?  %>
+    <%= link_to "Dashboard", dashboard_path, class: "nav-link confirmnew" %>
+  <% else %>
+    <%= link_to "Login", new_user_session_path, class: "nav-link confirmbuttonpurple", id: "homelogin" %>
+  <% end %>
   </div>
+   </div>
+</div>
+
+  <div class="containersecond">
+    <div class="value-proposition">
+      <div class="value-proposition-2" id="firstproposition">
+      <!-- <p class="icon"> 📈 </p> -->
+      <i class="fab fa-battle-net"></i>
+      <p class="homestats"> Transparency and optimization <br> in one place</p>
+      </div>
+    </div>
+  </div>
+    <div class="backgrounddiv3">
+      <div class="containersecond" id="centerproposition">
+      <div class="value-proposition-1">
+      <!-- <p class="icon"> 🤝 </p> -->
+      <i class="fas fa-anchor"></i>
+      <p class="homestats"> Thousands of partner integrations <br> via Api connections</p>
+      </div>
+    </div>
+    </div>
+    <div class="containersecond">
+      <div class="value-proposition-2">
+      <!-- <p class="icon"> ✨ </p> -->
+      <i class="fas fa-handshake"></i>
+      <p class="homestats"> User-friendly, <br> easy to use platform</p>
+      </div>
+    </div>
+
+<div class="backgrounddiv2">
+  <div class="containersecond">
+    <div class="containertry">
+
+    </div>
+
+    <div class="top">
+      <div class="topboxthree">
+        <p> Analyze your investments by asset class, sectors, and many more. </p>
+        <button class="confirmbuttonpurple" id="tryhome">Try Now</button>
+      </div>
+      <div class="bottom">
+      <%= image_tag("barchart.jpg")%>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="containertry">
+  <p class="bottomreference">Finport, 2021</p>
 </div>
 <!--
 <div>
