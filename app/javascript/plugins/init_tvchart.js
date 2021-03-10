@@ -76,11 +76,15 @@ const initTvChart = () => {
     },
     timeScale: {
       borderVisible: false,
+      
     },
     crosshair: {
       horzLine: {
         visible: false,
       },
+    },
+    localization: {
+      dateFormat: 'MM/dd',
     },
   });
 
@@ -101,10 +105,12 @@ const initTvChart = () => {
       lineWidth: 2,
     });
     areaSeries.setData(seriesesData.get(interval));
+    chart.timeScale().fitContent();
   }
   
-  syncToInterval(intervals[0]);
+  syncToInterval(intervals[1]);
 };
+
 
 export { initTvChart };
 

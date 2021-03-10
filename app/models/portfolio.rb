@@ -114,7 +114,7 @@ class Portfolio < ApplicationRecord
     dates = PastPricing.all_dates
 
     # year data
-    year_dates = dates.last(60)
+    year_dates = dates.last(365)
     year_data = year_dates.map do |date|
       { time: date, value: total_asset_value_on_date(date) }
     end
