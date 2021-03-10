@@ -4,7 +4,9 @@
   padding-left: 150px;
   padding-top: 18px;
   color: rgba(126, 107, 143,0.66);
-  background-color: rgba(164, 179, 183,0.18);
+  //background-color: rgba(164, 179, 183,0.18);
+  background-color:rgba(253, 250, 236, 0.2);
+  border-bottom: 1px solid rgba(164, 179, 183,0.3);
   height: 45px;
 }
 .bottommenubackground{
@@ -21,8 +23,9 @@ background-color:white;
  overflow: hidden;
  width: 100%;
  //background-color: rgba(126, 107, 143,0.6);
- background-color: rgba(164, 179, 183,0.21);
+ background-color: rgba(253, 250, 236, 0.3);
  height: 45px;
+ border-top:1px solid rgba(164, 179, 183,0.39);
 }
 
 .nbicons {
@@ -34,17 +37,19 @@ background-color:white;
 
 .confirmbutton {
   border-radius: 4.5px;
-  //background-color: rgba(126,107,143, 0.9);
-  background-color: rgba(13,12,29, 0.9);
+  background-color: rgba(126,107,143, 0.8);
+  //background-color: rgba(13,12,29, 0.9);
   color: #F5F5F4;
   width: 210px;
-  height: 33px;
+  height: 39px;
   letter-spacing: 2.4px;
-  font-weight: 200;
+  font-weight: 300;
   font-family: poppins;
   border: 0;
   //border: 1px solid rgba(13,12,29, 0.6);
-  box-shadow: 3px 3px 3px rgba(13,12,29,0.1);
+  box-shadow: 3px 3px 3px rgba(13,12,29,0.18);
+  margin: 30px auto;
+  line-height: 18px;
 }
 
 h3 {
@@ -63,27 +68,55 @@ h2 {
   // padding-top:60px;
 }
 
+h1 {
+   font-weight: 300;
+  font-family: poppins;
+  font-size: 33px;
+  letter-spacing: 2.1px;
+}
+
 .inputinstitutions {
   margin: 60px auto;
 }
 
 .confirmbuttonpurple {
   border-radius: 4.5px;
-  background-color: rgba(130, 145, 145,0.9);
+  //background-color: rgba(130, 145, 145,0.9);
   //background-color: rgba(13,12,29, 0.9);
+  background-color: rgba(132, 157, 174, 0.8);
   color: #F5F5F4;
   width: 210px;
   height: 39px;
   letter-spacing: 2.4px;
-  font-weight: 200;
+  font-weight: 300;
   font-family: poppins;
   border: 0;
   //border: 1px solid rgba(13,12,29, 0.6);
-  box-shadow: 3px 3px 3px rgba(13,12,29,0.3);
+  box-shadow: 3px 3px 3px rgba(13,12,29,0.18);
   margin: 30px auto;
   line-height: 18px;
 }
 
+.confirmnew{
+  border-radius: 4.5px;
+  //background-color: rgba(130, 145, 145,0.9);
+  //background-color: rgba(13,12,29, 0.9);
+  //background-color: rgba(132, 157, 174, 0.8);
+  background-color: rgba(253, 250, 236, 0.2);
+  color: rgba(126,107,143, 0.9);
+  width: 210px;
+  height: 39px;
+  letter-spacing: 2.4px;
+  font-weight: 400;
+  font-family: poppins;
+  border: 0;
+  //border: 1px solid rgba(13,12,29, 0.6);
+  box-shadow: 3px 3px 3px rgba(13,12,29,0.18);
+  margin: 0px auto;
+  margin-top:-9px;
+  line-height: 18px;
+  border: 2.1px solid rgba(126,107,143, 0.6);
+}
 .percentagedown{
   width: 45px;
   background-color: rgba(199,109,126,0.3);
@@ -147,7 +180,7 @@ h2 {
 }
 
 body {
-  background-color: rgba(245,245,245,0.3);
+  background-color: rgba(245,245,245,0.39);
   font-family: poppins;
   color: rgba(81, 97, 103,0.99);
   font-weight: 200;

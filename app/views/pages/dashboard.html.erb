@@ -1,4 +1,4 @@
-<div class="main">
+<div class="main" id="idtop">
 
 <h1 class="portfolio-header"> Dashboard </h1>
 
@@ -24,10 +24,14 @@
   </div>
 </div>
 
-<div class="sectionheader">
-<p class="sectionheader1"> INVESTMENTS</p>
-<p class="sectionheader1"> PERFORMANCE </p>
 </div>
+<div class="backgrounddiv2" id="backdash">
+  <div class="main" id="maindashboard">
+    <div class="sectionheader">
+    <h6 class="sectionheader1"> INVESTMENTS</h6>
+    <p class="sectionheader1"> PERFORMANCE </p>
+    </div>
+
 
     <ul class="detailslist">
     <% current_user.assets_by_name.each do |hash| %>
@@ -51,7 +55,9 @@
       </li>
     <% end %>
   </ul>
-
+</div>
+  </div>
+<div class="main" id="bottomid">
 <div class="sectionheader">
   <p class="sectionheader1"> SECTORS </p>
   <p class="sectionheader1"> PORTFOLIO SHARE </p>
@@ -87,7 +93,10 @@
       </li>
     <% end %>
   </ul>
+</div>
 
+<div class="backgrounddiv2" id="backdashend">
+  <div class="main" id="maindashboard">
 <h6 class="sectionheader1"> YOUR PORTFOLIOS </h6>
 
   <ul class="detailslist">
@@ -99,7 +108,8 @@
     <% end %>
       <li class="institutions" > <%= link_to "+ Add", institutions_path %> </li>
   </ul>
-
+</div>
+</div>
 
 <!-- <h4> Your assets: </h4>
 
@@ -138,5 +148,5 @@
     <% end %>
   </ul> -->
 
-</div>
-
+ <!--  </div>
+</div> -->
