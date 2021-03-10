@@ -1,18 +1,41 @@
-<div class="containertry">
+<div class="containertry" id="manage-institutions" >
   <h1 class="manage" id="connectionsheader"> Manage Connections </h1>
 
 
-  <h3>Connect to a new financial institution</h3>
+  <h3 class="h3-connect">Connect to a new financial institution</h3>
 
   <% @institutions.each do |institution| %>
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addNewConnectionModal">
-      <%= institution.name %>
 
-    </button>
+    <div class="d-flex justify-content-center institutions-iteration">
+      <% if institution.name == "TradeRepublic" %>
+        <img src="https://lh3.googleusercontent.com/FU21RTDrEq1jGDANkbMTZAjlVMKnDRLwr5-sBeBM6NElLdYzPZORk0AiLOXq256vow=s200"  alt="TradeRepublic Logo">
+        <% elsif institution.name == "Targo Bank" %>
+        <img src="https://yt3.ggpht.com/ytc/AAUvwngDULCWSnFWe8yw1XHqhb9MLV1SiiFs4LoWK_ECvA=s900-c-k-c0x00ffffff-no-rj"  alt="Bitpanda Logo">
+        <% elsif institution.name == "Scalable Capital" %>
+        <img src="https://pbs.twimg.com/profile_images/1206494500127944705/dquxjYRM.jpg"  alt="Scalable Capital Logo">
+        <% elsif institution.name == "Deutsche Bank" %>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Deutsche_Bank_logo_without_wordmark.svg/300px-Deutsche_Bank_logo_without_wordmark.svg.png" alt="Deutsche Bank Logo">
+        <% elsif institution.name == "ING-DiBa" %>
+        <img src="https://www.netzsieger.de/media/finanzen/darlehen/autokredite/ing-diba-autokredit/autokredite-ing_diba-logo_klein_thumb.png" alt="ING-Diba Logo">
+        <% elsif institution.name == "Sparkasse" %>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Logo-_Sparkassen-App_%E2%80%93_die_mobile_Filiale.png" alt="Sparkasse Logo">
+        <% elsif institution.name =="Flatex" %>
+        <img src="https://www.ishares.com/uk-retail-k-assets/cache-1590611285997/images/media-bin/web/emea-ishares-v2/icons/open-a-savings-plan/flatex.png" alt="Flatex Logo">
+        <% elsif institution.name =="Bison" %>
+        <img src="https://pbs.twimg.com/profile_images/988391149709733888/0iU_G5D5.jpg" alt="Bison Logo">
+        <% elsif institution.name == "Commerzbank" %>
+        <img src="https://haustal.de/wp-content/uploads/2020/02/comm.jpg" alt="Commerzbank Logo">
+        <% elsif institution.name == "smartbroker" %>
+        <img src="https://smartbroker.de/images/smartbroker_xs.png" alt="smart broker Logo">
+      <% end %>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addNewConnectionModal-<%= institution.name %>">
+        <%= institution.name %> 
+      </button>
+    </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="addNewConnectionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="addNewConnectionModal-<%= institution.name %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <%= simple_form_for Portfolio.new, :html=> { class: 'inputinstitutions' } do |f| %>
         <div class="modal-dialog" role="document">
           <div class="modal-content" id="modal-content">
