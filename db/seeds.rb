@@ -55,49 +55,49 @@ portfolio2 = Portfolio.create!(institution: institution2)
 asset2 = Asset.create!(portfolio: portfolio2, asset_name: "Hello Fresh", current_unit_price: 63.85, asset_category: "stocks", industry: industries["food"])
 acquisition_asset2 = Acquisition.create(asset: asset2, date_bought: "2021-02-15 13:24:20" , units_bought: 10, unit_price_bought: 65.23)
 past_pricings_asset1_2 = PastPricing.create!(date: "2021-02-15 13:24:20", unit_price: 63.20, asset: asset2)
-​
+
 institution3 = Institution.create!(name: "Sparkasse")
 portfolio3 = Portfolio.create!(institution: institution3)
 asset3 = Asset.create!(portfolio: portfolio3, asset_name: "Hello Fresh", current_unit_price: 63.85, asset_category: "stocks", industry: industries["food"])
 acquisition_asset3 = Acquisition.create(asset: asset3, date_bought: "2021-02-15 13:24:20" , units_bought: 10, unit_price_bought: 65.23)
 past_pricings_asset1_3 = PastPricing.create!(date: "2021-02-15 13:24:20", unit_price: 63.20, asset: asset3)
-​
+
 institution4 = Institution.create!(name: "Flatex")
 portfolio4 = Portfolio.create!(institution: institution4)
 asset4 = Asset.create!(portfolio: portfolio4, asset_name: "Hello Fresh", current_unit_price: 63.85, asset_category: "stocks", industry: industries["food"])
 acquisition_asset4 = Acquisition.create(asset: asset4, date_bought: "2021-02-15 13:24:20" , units_bought: 10, unit_price_bought: 65.23)
 past_pricings_asset1_4 = PastPricing.create!(date: "2021-02-15 13:24:20", unit_price: 63.20, asset: asset4)
-​
+
 institution5 = Institution.create!(name: "Deutsche Bank")
 portfolio5 = Portfolio.create!(institution: institution5)
 asset5 = Asset.create!(portfolio: portfolio5, asset_name: "Hello Fresh", current_unit_price: 63.85, asset_category: "stocks", industry: industries["food"])
 acquisition_asset5 = Acquisition.create(asset: asset5, date_bought: "2021-02-15 13:24:20" , units_bought: 10, unit_price_bought: 65.23)
 past_pricings_asset1_5 = PastPricing.create!(date: "2021-02-15 13:24:20", unit_price: 63.20, asset: asset5)
-​
+
 institution6 = Institution.create!(name: "ING-DiBa")
 portfolio6 = Portfolio.create!(institution: institution6)
 asset6 = Asset.create!(portfolio: portfolio6, asset_name: "Hello Fresh", current_unit_price: 63.85, asset_category: "stocks", industry: industries["food"])
 acquisition_asset6 = Acquisition.create(asset: asset6, date_bought: "2021-02-15 13:24:20" , units_bought: 10, unit_price_bought: 65.23)
 past_pricings_asset1_6 = PastPricing.create!(date: "2021-02-15 13:24:20", unit_price: 63.20, asset: asset6)
-​
+
 institution7 = Institution.create!(name: "Bison")
 portfolio7 = Portfolio.create!(institution: institution7)
 asset7 = Asset.create!(portfolio: portfolio7, asset_name: "Hello Fresh", current_unit_price: 63.85, asset_category: "stocks", industry: industries["food"])
 acquisition_asset7 = Acquisition.create(asset: asset7, date_bought: "2021-02-15 13:24:20" , units_bought: 10, unit_price_bought: 65.23)
 past_pricings_asset1_7 = PastPricing.create!(date: "2021-02-15 13:24:20", unit_price: 63.20, asset: asset7)
-​
+
 institution8 = Institution.create!(name: "Targo Bank")
 portfolio8 = Portfolio.create!(institution: institution8)
 asset8 = Asset.create!(portfolio: portfolio8, asset_name: "Hello Fresh", current_unit_price: 63.85, asset_category: "stocks", industry: industries["food"])
 acquisition_asset8 = Acquisition.create(asset: asset8, date_bought: "2021-02-15 13:24:20" , units_bought: 10, unit_price_bought: 65.23)
 past_pricings_asset1_8 = PastPricing.create!(date: "2021-02-15 13:24:20", unit_price: 63.20, asset: asset8)
-​
+
 institution9 = Institution.create!(name: "Commerzbank")
 portfolio9 = Portfolio.create!(institution: institution9)
 asset9 = Asset.create!(portfolio: portfolio9, asset_name: "Hello Fresh", current_unit_price: 63.85, asset_category: "stocks", industry: industries["food"])
 acquisition_asset9 = Acquisition.create(asset: asset9, date_bought: "2021-02-15 13:24:20" , units_bought: 10, unit_price_bought: 65.23)
 past_pricings_asset1_9 = PastPricing.create!(date: "2021-02-15 13:24:20", unit_price: 63.20, asset: asset9)
-​
+
 institution10 = Institution.create!(name: "smartbroker")
 portfolio10 = Portfolio.create!(institution: institution10)
 asset10 = Asset.create!(portfolio: portfolio10, asset_name: "Hello Fresh", current_unit_price: 63.85, asset_category: "stocks", industry: industries["food"])
