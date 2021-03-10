@@ -6,6 +6,7 @@
 
   <% @institutions.each do |institution| %>
     <!-- Button trigger modal -->
+
     <div class="d-flex justify-content-center institutions-iteration">
       <% if institution.name == "TradeRepublic" %>
         <img src="https://lh3.googleusercontent.com/FU21RTDrEq1jGDANkbMTZAjlVMKnDRLwr5-sBeBM6NElLdYzPZORk0AiLOXq256vow=s200"  alt="TradeRepublic Logo">
@@ -38,9 +39,9 @@
       <%= simple_form_for Portfolio.new, :html=> { class: 'inputinstitutions' } do |f| %>
         <div class="modal-dialog" role="document">
           <div class="modal-content" id="modal-content">
-            
+
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">sign in to import your Portfolio from:</h5>
+              <p class="modal-title" id="exampleModalLabel"> Sign in to your account at:</p>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -48,9 +49,7 @@
 
             <div class="modal-body">
               <div>
-              <br>
                 <h2><%= institution.name %></h2>
-                <br>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Account number</label>
                   <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -64,9 +63,9 @@
 
             <div class="modal-footer containertry">
               <%= f.hidden_field :institution_id, value: institution.id %>
-              <%= f.submit "Add Connection", class: 'confirm-login'%>
+              <%= f.submit "Add Account", class: 'confirm-login'%>
             </div>
-            
+
           </div>
         </div>
       <% end %>
@@ -75,7 +74,7 @@
   <% end %>
 </div>
 
-  
+
 
 
 
