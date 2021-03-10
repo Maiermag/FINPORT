@@ -58,7 +58,7 @@ class PagesController < ApplicationController
   def chart_playground
     # client =  Alpaca::Trade::Api::Client.new
     # p client.account
-    # url = 'https://paper-api.alpaca.markets/v2/account/portfolio/history'
+    # url = 'https://data.alpaca.markets/v2'
     # headers = {
     #   "APCA-API-KEY-ID" => ENV['ALPACA_API_KEY_ID'],
     #   "APCA-API-SECRET-KEY" => ENV['ALPACA_API_SECRET_KEY'],
