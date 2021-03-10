@@ -78,6 +78,7 @@ const initTvChart = () => {
 
     timeScale: {
       borderVisible: false,
+      
     },
     localization: {
       dateFormat: 'dd/MM/yy',
@@ -87,6 +88,9 @@ const initTvChart = () => {
       horzLine: {
         visible: false,
       },
+    },
+    localization: {
+      dateFormat: 'MM/dd',
     },
   });
 
@@ -109,9 +113,10 @@ const initTvChart = () => {
     areaSeries.setData(seriesesData.get(interval));
     chart.timeScale().fitContent();
   }
-
-  syncToInterval(intervals[0]);
+  
+  syncToInterval(intervals[1]);
 };
+
 
 export { initTvChart };
 
