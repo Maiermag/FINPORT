@@ -29,13 +29,13 @@
         <% elsif institution.name == "smartbroker" %>
         <img src="https://smartbroker.de/images/smartbroker_xs.png" alt="smart broker Logo">
       <% end %>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addNewConnectionModal-<%= institution.name %>">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addNewConnectionModal-<%= institution.name.gsub(/\s/, '_') %>">
         <%= institution.name %> 
       </button>
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="addNewConnectionModal-<%= institution.name %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="addNewConnectionModal-<%= institution.name.gsub(/\s/, '_') %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <%= simple_form_for Portfolio.new, :html=> { class: 'inputinstitutions' } do |f| %>
         <div class="modal-dialog" role="document">
           <div class="modal-content" id="modal-content">

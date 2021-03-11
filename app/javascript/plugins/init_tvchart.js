@@ -1,6 +1,9 @@
 import { createChart } from 'lightweight-charts';
 
 const initTvChart = () => {
+  if (!document.querySelector('#tv-chart')) {
+    return;
+  }
   function createSimpleSwitcher(items, activeItem, activeItemChangedCallback) {
     var switcherElement = document.querySelector('#tv-chart');
     switcherElement.classList.add('switcher');
