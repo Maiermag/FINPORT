@@ -109,6 +109,8 @@ user1 = User.create!(first_name: "Jonas", last_name: "Mikael", email: "jonas@exa
 #  Trade Republic - Institution 1
 institution1 = Institution.create!(name: "TradeRepublic")
 portfolio1 = Portfolio.create!(user: user1, institution: institution1)
+
+# 1spast_pricings_asset1_1 = PastPricing.create!(date: "2020-03-06 13:24:20", unit_price: 24.80, asset: asset1)
 # 1st seed within Trade Republic - Hello Fresh
 asset1 = Asset.create!(portfolio: portfolio1, asset_name: "Hello Fresh", current_unit_price: 56.70, asset_category: "stocks", industry: industries["food"])
 acquisition_asset1 = Acquisition.create(asset: asset1, date_bought: "2021-02-15 13:24:20" , units_bought: 10, unit_price_bought: 22.10)
@@ -501,6 +503,7 @@ acquisition_asset1 = Acquisition.create(asset: asset1, date_bought: "2021-02-15 
 # 2nd seed within Trade Republic - Tesla
 asset2 = Asset.create!(portfolio: portfolio1, asset_name: "Tesla", current_unit_price: 577.00, asset_category: "stocks", industry: industries["automotive"])
 acquisition_asset2 = Acquisition.create(asset: asset2, date_bought: "2021-02-15 13:24:20" , units_bought: 50, unit_price_bought: 127.68)
+
   past_pricings_asset2_1 = PastPricing.create!(date: "2020-03-01 13:24:20", unit_price: 127.68, asset: asset2)
   past_pricings_asset2_1 = PastPricing.create!(date: "2020-03-02 13:24:20", unit_price: 127.68, asset: asset2)
   past_pricings_asset2_1 = PastPricing.create!(date: "2020-03-03 13:24:20", unit_price: 137.04, asset: asset2)
@@ -3424,7 +3427,9 @@ acquisition_asset9 = Acquisition.create(asset: asset9, date_bought: "2021-02-15 
 
 # Create Institution 2 - Scalable Capital
 institution2 = Institution.create!(name: "Scalable Capital")
+
 portfolio4 = Portfolio.create!(institution: institution2)
+
 # 1st seed within Scalable Capital
 asset10 = Asset.create!(portfolio: portfolio4, asset_name: "Plug Power", current_unit_price: 36.79, asset_category: "stocks", industry: industries["energy"])
 acquisition_asset10 = Acquisition.create(asset: asset10, date_bought: "2021-02-15 13:24:20" , units_bought: 10, unit_price_bought: 3.87)
