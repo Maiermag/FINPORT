@@ -83,7 +83,7 @@ class User < ApplicationRecord
   hashes = asset_categories.uniq.map do |asset_category|
     current_value = total_category_current_value(asset_category)
     {
-      name: asset_category.capitalize,
+      name: asset_category == 'ETF' ? asset_category : asset_category.capitalize,
       portfolio_value: current_value,
       portfolio_share: ((current_value / total_invest_current_value) * 100),
     }
