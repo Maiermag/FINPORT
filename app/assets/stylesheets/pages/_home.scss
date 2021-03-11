@@ -11,7 +11,7 @@
 }
 
 #bottomid {
-  margin-bottom:60px;
+  margin-bottom:-30px;
 }
 
 .top {
@@ -43,7 +43,16 @@
   padding-bottom: 0.1px;
   padding-left: 4.5px;
   padding-right: 4.5px;
-  background-color: rgba(164, 184, 196, 0.09);
+  background-color: rgba(164, 184, 196, 0.045);
+}
+
+#assetmain{
+  background-color: rgba(164, 184, 196, 0.045);
+  padding-bottom: 0.1px;
+}
+
+#mainbottom{
+  margin-bottom:60px;
 }
 
 #idtop {
@@ -55,7 +64,7 @@
   //background-color: rgba(164, 184, 196, 0.3);
   //background-color: rgba(206, 236, 151,0.3);
   //background-color: rgba(232, 225, 155, 0.21);
-  background-color: rgba(164, 184, 196, 0.18);
+  background-color: rgba(164, 184, 196, 0.09);
   padding-top: 15px;
   margin-top:21px;
 }
@@ -66,6 +75,12 @@
   padding-top: 0px;
   padding-bottom:0.1px;
   margin-bottom: -39px;
+}
+
+#backdash2 {
+  padding-top: 0px;
+  padding-bottom:0.1px;
+  margin-bottom: 39px;
 }
 
 #backdashend {
@@ -158,9 +173,15 @@
 
 }
 
-img {
+.banner-image{
   width: 100%;
 }
+
+.homeimg{
+  width: 100%;
+}
+
+
 
 .icon {
   font-size: 25px;
@@ -181,3 +202,8 @@ img {
 .fa-battle-net{
   font-size: 27px;
 }
+
+// .portfolio-header{
+//   font-size: 45px;
+//   font-weight: 200;
+// }
