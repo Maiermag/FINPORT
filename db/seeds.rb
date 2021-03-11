@@ -109,6 +109,8 @@ user1 = User.create!(first_name: "Jonas", last_name: "Mikael", email: "jonas@exa
 #  Trade Republic - Institution 1
 institution1 = Institution.create!(name: "TradeRepublic")
 portfolio1 = Portfolio.create!(user: user1, institution: institution1)
+
+# 1spast_pricings_asset1_1 = PastPricing.create!(date: "2020-03-06 13:24:20", unit_price: 24.80, asset: asset1)
 # 1st seed within Trade Republic - Hello Fresh
 asset1 = Asset.create!(portfolio: portfolio1, asset_name: "Hello Fresh", current_unit_price: 56.70, asset_category: "stocks", industry: industries["food"])
 acquisition_asset1 = Acquisition.create(asset: asset1, date_bought: "2021-02-15 13:24:20" , units_bought: 10, unit_price_bought: 22.10)
@@ -501,8 +503,9 @@ acquisition_asset1 = Acquisition.create(asset: asset1, date_bought: "2021-02-15 
 # 2nd seed within Trade Republic - Tesla
 asset2 = Asset.create!(portfolio: portfolio1, asset_name: "Tesla", current_unit_price: 577.00, asset_category: "stocks", industry: industries["automotive"])
 acquisition_asset2 = Acquisition.create(asset: asset2, date_bought: "2021-02-15 13:24:20" , units_bought: 50, unit_price_bought: 127.68)
-  past_pricings_asset2_1 = PastPricing.create!(date: "2020-03-01 13:24:20", unit_price: 127.68, asset: asset2)  
-  past_pricings_asset2_1 = PastPricing.create!(date: "2020-03-02 13:24:20", unit_price: 127.68, asset: asset2)  
+
+  past_pricings_asset2_1 = PastPricing.create!(date: "2020-03-01 13:24:20", unit_price: 127.68, asset: asset2)
+  past_pricings_asset2_1 = PastPricing.create!(date: "2020-03-02 13:24:20", unit_price: 127.68, asset: asset2)
   past_pricings_asset2_1 = PastPricing.create!(date: "2020-03-03 13:24:20", unit_price: 137.04, asset: asset2)
   past_pricings_asset2_1 = PastPricing.create!(date: "2020-03-04 13:24:20", unit_price: 134.26, asset: asset2)
   past_pricings_asset2_1 = PastPricing.create!(date: "2020-03-05 13:24:20", unit_price: 132.02, asset: asset2)
@@ -1675,8 +1678,8 @@ acquisition_asset4= Acquisition.create(asset: asset4, date_bought: "2021-02-15 1
   past_pricings_asset4_1 = PastPricing.create!(date: "2021-03-10 13:24:20", unit_price: 12.420, asset: asset4)
 
 
-# 
-# 
+#
+#
 # Coinbase - Institution 6
 institution6 = Institution.create!(name: "Coinbase")
 # Create Portfolio 2
@@ -2640,7 +2643,7 @@ acquisition_asset7 = Acquisition.create(asset: asset7, date_bought: "2021-02-15 
     past_pricings_asset7_1 = PastPricing.create!(date: "2021-03-08 13:24:20", unit_price: 29.44990, asset: asset7)
     past_pricings_asset7_1 = PastPricing.create!(date: "2021-03-09 13:24:20", unit_price: 32.12090, asset: asset7)
     past_pricings_asset7_1 = PastPricing.create!(date: "2021-03-10 13:24:20", unit_price: 32.54610, asset: asset7)
-# 
+#
 
 institution5 = Institution.create!(name: "Deutsche Bank")
 portfolio3 = Portfolio.create!(user: user1, institution: institution5)
@@ -3424,7 +3427,9 @@ acquisition_asset9 = Acquisition.create(asset: asset9, date_bought: "2021-02-15 
 
 # Create Institution 2 - Scalable Capital
 institution2 = Institution.create!(name: "Scalable Capital")
+
 portfolio4 = Portfolio.create!(institution: institution2)
+
 # 1st seed within Scalable Capital
 asset10 = Asset.create!(portfolio: portfolio4, asset_name: "Plug Power", current_unit_price: 36.79, asset_category: "stocks", industry: industries["energy"])
 acquisition_asset10 = Acquisition.create(asset: asset10, date_bought: "2021-02-15 13:24:20" , units_bought: 10, unit_price_bought: 3.87)
@@ -4593,7 +4598,7 @@ acquisition_asset11 = Acquisition.create(asset: asset11, date_bought: "2021-02-1
 # past_pricings_asset10_1 = PastPricing.create!(date: "2021-03-09 13:24:20", unit_price: 40000, asset: asset10)
 # past_pricings_asset10_1 = PastPricing.create!(date: "2021-03-10 13:24:20", unit_price: 40000, asset: asset10)
 
-# 
+#
 # # second seed
 # user2 = User.create!(first_name: "Bella", last_name: "Stad", email: "Bella@example.com", password: "123456")
 # user3 = User.create!(first_name: "Tom", last_name: "Bell", email: "Tom@example.com", password: "123456")
