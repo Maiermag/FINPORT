@@ -1,5 +1,5 @@
 
-<div class="main">
+<div class="main" id="idtop">
 
 <h1 class="portfolio-header"> <%= @portfolio.institution.name %> </h1>
 
@@ -23,7 +23,11 @@
                     data-year="<%= @year_data.to_json %>">
   </div>
 </div>
+</div>
 
+
+<div class="backgrounddiv2" id="backdash">
+  <div class="main" id="maindashboard">
 <div class="sectionheader">
   <p class="sectionheader1">INVESTMENTS</p>
   <p class="sectionheader1">PERFORMANCE</p>
@@ -31,7 +35,7 @@
 
   <ul class="detailslist">
     <% @portfolio.assets_by_name.each do |hash| %>
-      
+
       <li class="details">
         <div class="d-flex align-items-center">
           <% if hash[:name] == "Bitcoin" %>
@@ -46,14 +50,16 @@
             <p> <%= number_to_currency(hash[:portfolio_value]) %> </p>
           </div>
         </div>
-        
+
         <p class="pos-neg"> <%= hash[:performance].round(2) %> % </p>
         <!-- | Portfolio share: <%= hash[:portfolio_share].round(2) %> % -->
 
       </li>
     <% end %>
   </ul>
-
+  </div>
+</div>
+<div class="main" id="bottomid">
 <div class="sectionheader">
 <p class="sectionheader1"> SECTORS </p>
 <p class="sectionheader1"> PORTFOLIO SHARE </p>
@@ -72,8 +78,11 @@
       </li>
     <% end %>
   </ul>
+</div>
 
 
+<div class="backgrounddiv2" id="backdash2">
+<div class="main" id="assetmain">
 <div class="sectionheader">
 <p class="sectionheader1"> ASSET CLASSES </p>
 <p class="sectionheader1"> PORTFOLIO SHARE </p>
@@ -95,4 +104,5 @@
 
 <!-- button> <%= link_to "[ x remove portfolio ]", portfolio_path(@portfolio), method: :delete, data: {confirm: "Are you sure?"} %> </button>
  -->
+</div>
 </div>
