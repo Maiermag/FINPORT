@@ -37,7 +37,7 @@ const initTvChart = () => {
     return switcherElement;
   }
 
-  var intervals = ['Week', 'Month', 'Year'];
+  var intervals = ['Week', 'Month', 'Quarter'];
 
 
   // var dayData = JSON.parse(document.querySelector('#tv-chart').dataset.day);
@@ -50,7 +50,7 @@ const initTvChart = () => {
   var seriesesData = new Map([
     ['Week', weekData ],
     ['Month', monthData ],
-    ['Year', yearData ],
+    ['Quarter', yearData ],
   ]);
 
   var switcherElement = createSimpleSwitcher(intervals, intervals[0], syncToInterval);
@@ -81,7 +81,7 @@ const initTvChart = () => {
 
     timeScale: {
       borderVisible: false,
-      
+
     },
     localization: {
       dateFormat: 'dd/MM/yy',
@@ -116,7 +116,7 @@ const initTvChart = () => {
     areaSeries.setData(seriesesData.get(interval));
     chart.timeScale().fitContent();
   }
-  
+
   syncToInterval(intervals[1]);
 };
 
