@@ -50,11 +50,11 @@ institution20 = Institution.create!(name: "Oskar")
 institution21 = Institution.create!(name: "Faker")
 institution22 = Institution.create!(name: "")
 #test
-institution2 = Institution.create!(name: "Scalable Capital")
-portfolio2 = Portfolio.create!(institution: institution2)
-asset2 = Asset.create!(portfolio: portfolio2, asset_name: "Hello Fresh", current_unit_price: 63.85, asset_category: "stocks", industry: industries["food"])
-acquisition_asset2 = Acquisition.create(asset: asset2, date_bought: "2021-02-15 13:24:20" , units_bought: 10, unit_price_bought: 65.23)
-past_pricings_asset1_2 = PastPricing.create!(date: "2021-02-15 13:24:20", unit_price: 63.20, asset: asset2)
+# institution2 = Institution.create!(name: "Scalable Capital")
+# portfolio2 = Portfolio.create!(institution: institution2)
+# asset2 = Asset.create!(portfolio: portfolio2, asset_name: "Hello Fresh", current_unit_price: 63.85, asset_category: "stocks", industry: industries["food"])
+# acquisition_asset2 = Acquisition.create(asset: asset2, date_bought: "2021-02-15 13:24:20" , units_bought: 10, unit_price_bought: 65.23)
+# past_pricings_asset1_2 = PastPricing.create!(date: "2021-02-15 13:24:20", unit_price: 63.20, asset: asset2)
 
 institution3 = Institution.create!(name: "Sparkasse")
 portfolio3 = Portfolio.create!(institution: institution3)
@@ -502,7 +502,7 @@ acquisition_asset1 = Acquisition.create(asset: asset1, date_bought: "2021-02-15 
 
 # 2nd seed within Trade Republic - Tesla
 asset2 = Asset.create!(portfolio: portfolio1, asset_name: "Tesla", current_unit_price: 577.00, asset_category: "stocks", industry: industries["automotive"])
-acquisition_asset2 = Acquisition.create(asset: asset2, date_bought: "2021-02-15 13:24:20" , units_bought: 50, unit_price_bought: 127.68)
+acquisition_asset2 = Acquisition.create(asset: asset2, date_bought: "2021-01-18 13:24:20" , units_bought: 50, unit_price_bought: 718.00)
 
   past_pricings_asset2_1 = PastPricing.create!(date: "2020-03-01 13:24:20", unit_price: 127.68, asset: asset2)
   past_pricings_asset2_1 = PastPricing.create!(date: "2020-03-02 13:24:20", unit_price: 127.68, asset: asset2)
@@ -1287,7 +1287,7 @@ acquisition_asset3= Acquisition.create(asset: asset3, date_bought: "2021-02-15 1
   past_pricings_asset3_1 = PastPricing.create!(date: "2021-03-10 13:24:20", unit_price: 414.52, asset: asset3)
 
 # 4th seed with Trade Republic Bank - Lufthansa
-asset4 = Asset.create!(portfolio: portfolio1, asset_name: "Lufthansa", current_unit_price: 12.42, asset_category: "Stock", industry: industries["aviation"])
+asset4 = Asset.create!(portfolio: portfolio1, asset_name: "Lufthansa", current_unit_price: 12.42, asset_category: "Stocks", industry: industries["aviation"])
 acquisition_asset4= Acquisition.create(asset: asset4, date_bought: "2021-02-15 13:24:20" , units_bought: 50, unit_price_bought: 10.93)
   past_pricings_asset4_1 = PastPricing.create!(date: "2020-03-01 13:24:20", unit_price: 10.930, asset: asset4)
   past_pricings_asset4_1 = PastPricing.create!(date: "2020-03-02 13:24:20", unit_price: 10.930, asset: asset4)
@@ -2066,7 +2066,7 @@ acquisition_asset5 = Acquisition.create(asset: asset5, date_bought: "2021-02-15 
     past_pricings_asset5_18 = PastPricing.create!(date: "2021-02-27 12:00:00", unit_price: 38364.7, asset: asset5)
     past_pricings_asset5_19 = PastPricing.create!(date: "2021-02-28 14:00:00", unit_price: 37388.6, asset: asset5)
     # March 2021
-    past_pricings_asset5_23 = PastPricing.create!(date: "2021-03-03 22:00:00", unit_price: 41214.0, asset: asset5)
+    past_pricings_asset5_23 = PastPricing.create!(date: "2021-03-01 22:00:00", unit_price: 41214.0, asset: asset5)
     past_pricings_asset5_1 = PastPricing.create!(date: "2021-03-02 13:24:20", unit_price: 40154.3, asset: asset5)
     past_pricings_asset5_1 = PastPricing.create!(date: "2021-03-03 13:24:20", unit_price: 41948.0, asset: asset5)
     past_pricings_asset5_1 = PastPricing.create!(date: "2021-03-04 13:24:20", unit_price: 40475.4, asset: asset5)
@@ -2461,7 +2461,7 @@ acquisition_asset6 = Acquisition.create(asset: asset6, date_bought: "2021-02-15 
   past_pricings_asset6_18 = PastPricing.create!(date: "2021-02-27 12:00:00", unit_price: 1211.85, asset: asset6)
   past_pricings_asset6_19 = PastPricing.create!(date: "2021-02-28 14:00:00", unit_price: 1175.53, asset: asset6)
   # March 2021
-  past_pricings_asset6_23 = PastPricing.create!(date: "2021-03-03 22:00:00", unit_price: 1304.20, asset: asset6)
+  past_pricings_asset6_23 = PastPricing.create!(date: "2021-03-01 22:00:00", unit_price: 1304.20, asset: asset6)
   past_pricings_asset6_1 = PastPricing.create!(date: "2021-03-02 13:24:20", unit_price: 1233.41, asset: asset6)
   past_pricings_asset6_1 = PastPricing.create!(date: "2021-03-03 13:24:20", unit_price: 1304.82, asset: asset6)
   past_pricings_asset6_1 = PastPricing.create!(date: "2021-03-04 13:24:20", unit_price: 1287.47, asset: asset6)
@@ -2633,7 +2633,7 @@ acquisition_asset7 = Acquisition.create(asset: asset7, date_bought: "2021-02-15 
     past_pricings_asset7_18 = PastPricing.create!(date: "2021-02-27 12:00:00", unit_price: 27.76560, asset: asset7)
     past_pricings_asset7_19 = PastPricing.create!(date: "2021-02-28 14:00:00", unit_price: 27.98710, asset: asset7)
     # March 2021
-    past_pricings_asset7_23 = PastPricing.create!(date: "2021-03-03 22:00:00", unit_price: 29.59990, asset: asset7)
+    past_pricings_asset7_23 = PastPricing.create!(date: "2021-03-01 22:00:00", unit_price: 29.59990, asset: asset7)
     past_pricings_asset7_1 = PastPricing.create!(date: "2021-03-02 13:24:20", unit_price: 30.04280, asset: asset7)
     past_pricings_asset7_1 = PastPricing.create!(date: "2021-03-03 13:24:20", unit_price: 30.82180, asset: asset7)
     past_pricings_asset7_1 = PastPricing.create!(date: "2021-03-04 13:24:20", unit_price: 29.57480, asset: asset7)
@@ -3024,7 +3024,7 @@ acquisition_asset8 = Acquisition.create(asset: asset8, date_bought: "2021-02-15 
   past_pricings_asset8_18 = PastPricing.create!(date: "2021-02-27 12:00:00", unit_price: 56.0000, asset: asset8)
   past_pricings_asset8_19 = PastPricing.create!(date: "2021-02-28 14:00:00", unit_price: 56.5000, asset: asset8)
   # March 2021
-  past_pricings_asset8_23 = PastPricing.create!(date: "2021-03-03 22:00:00", unit_price: 55.5000, asset: asset8)
+  past_pricings_asset8_23 = PastPricing.create!(date: "2021-03-01 22:00:00", unit_price: 55.5000, asset: asset8)
   past_pricings_asset8_1 = PastPricing.create!(date: "2021-03-02 13:24:20", unit_price: 55.5000, asset: asset8)
   past_pricings_asset8_1 = PastPricing.create!(date: "2021-03-03 13:24:20", unit_price: 55.5000, asset: asset8)
   past_pricings_asset8_1 = PastPricing.create!(date: "2021-03-04 13:24:20", unit_price: 56.5000, asset: asset8)
@@ -3414,7 +3414,7 @@ acquisition_asset9 = Acquisition.create(asset: asset9, date_bought: "2021-02-15 
   past_pricings_asset9_18 = PastPricing.create!(date: "2021-02-27 12:00:00", unit_price: 1060.0000, asset: asset9)
   past_pricings_asset9_19 = PastPricing.create!(date: "2021-02-28 14:00:00", unit_price: 1068.6000, asset: asset9)
   # March 2021
-  past_pricings_asset9_23 = PastPricing.create!(date: "2021-03-03 22:00:00", unit_price: 1021.6000, asset: asset9)
+  past_pricings_asset9_23 = PastPricing.create!(date: "2021-03-01 22:00:00", unit_price: 1021.6000, asset: asset9)
   past_pricings_asset9_1 = PastPricing.create!(date: "2021-03-02 13:24:20", unit_price: 1063.0000, asset: asset9)
   past_pricings_asset9_1 = PastPricing.create!(date: "2021-03-03 13:24:20", unit_price: 1076.4000, asset: asset9)
   past_pricings_asset9_1 = PastPricing.create!(date: "2021-03-04 13:24:20", unit_price: 1072.0000, asset: asset9)
@@ -3808,7 +3808,7 @@ acquisition_asset10 = Acquisition.create(asset: asset10, date_bought: "2021-02-1
   past_pricings_asset10_18 = PastPricing.create!(date: "2021-02-27 12:00:00", unit_price: 37.67, asset: asset10)
   past_pricings_asset10_19 = PastPricing.create!(date: "2021-02-28 14:00:00", unit_price: 39.90, asset: asset10)
   # March 2021
-  past_pricings_asset10_23 = PastPricing.create!(date: "2021-03-03 22:00:00", unit_price: 37.62, asset: asset10)
+  past_pricings_asset10_23 = PastPricing.create!(date: "2021-03-01 22:00:00", unit_price: 37.62, asset: asset10)
   past_pricings_asset10_1 = PastPricing.create!(date: "2021-03-02 13:24:20", unit_price: 40.41, asset: asset10)
   past_pricings_asset10_1 = PastPricing.create!(date: "2021-03-03 13:24:20", unit_price: 43.10, asset: asset10)
   past_pricings_asset10_1 = PastPricing.create!(date: "2021-03-04 13:24:20", unit_price: 41.90, asset: asset10)
@@ -4197,7 +4197,7 @@ acquisition_asset11 = Acquisition.create(asset: asset11, date_bought: "2021-02-1
   past_pricings_asset11_18 = PastPricing.create!(date: "2021-02-27 12:00:00", unit_price: 12.212, asset: asset11)
   past_pricings_asset11_19 = PastPricing.create!(date: "2021-02-28 14:00:00", unit_price: 12.458, asset: asset11)
   # March 2021
-  past_pricings_asset11_23 = PastPricing.create!(date: "2021-03-03 22:00:00", unit_price: 12.292, asset: asset11)
+  past_pricings_asset11_23 = PastPricing.create!(date: "2021-03-01 22:00:00", unit_price: 12.292, asset: asset11)
   past_pricings_asset11_1 = PastPricing.create!(date: "2021-03-02 13:24:20", unit_price: 12.312, asset: asset11)
   past_pricings_asset11_1 = PastPricing.create!(date: "2021-03-03 13:24:20", unit_price: 12.810, asset: asset11)
   past_pricings_asset11_1 = PastPricing.create!(date: "2021-03-04 13:24:20", unit_price: 12.432, asset: asset11)

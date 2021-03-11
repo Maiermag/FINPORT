@@ -117,7 +117,7 @@ const initTvChart = () => {
     chart.timeScale().fitContent();
   }
 
-  syncToInterval(intervals[1]);
+  syncToInterval(intervals[0]);
 };
 
 
